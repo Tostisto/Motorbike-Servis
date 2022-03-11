@@ -18,13 +18,11 @@ namespace Project.Pages
             new Motorbike("fdasfa_32dsjk", "BMW R100S", 1200, "free"),
             new Motorbike("dsajkldsa", "Test test", 200, "Rented"),
             new Motorbike("dsdsdsd", "test2 test2", 3000, "free"),
-
         };
 
         public Reservation()
         {
             InitializeComponent();
         }
-
     }
 }
