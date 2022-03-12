@@ -21,7 +21,7 @@ namespace Project
             this.userInfoName.Text = user.FirstName + " " + user.LastName;
 
             container.Controls.Clear();
-            Pages.Objednavka objednavka = new Pages.Objednavka();
+            User_Pages.Objednavka objednavka = new User_Pages.Objednavka();
             objednavka.TopLevel = false;
             container.Controls.Add(objednavka);
             objednavka.FormBorderStyle = FormBorderStyle.None;
@@ -33,7 +33,7 @@ namespace Project
         private void objednavka_btn_Click(object sender, EventArgs e)
         {
             container.Controls.Clear();
-            Pages.Objednavka objednavka = new Pages.Objednavka();
+            User_Pages.Objednavka objednavka = new User_Pages.Objednavka();
             objednavka.TopLevel = false;
             container.Controls.Add(objednavka);
             objednavka.FormBorderStyle = FormBorderStyle.None;
@@ -46,7 +46,7 @@ namespace Project
         private void reservation_button_Click(object sender, EventArgs e)
         {
             container.Controls.Clear();
-            Pages.Reservation reservation = new Pages.Reservation();
+            User_Pages.Reservation reservation = new User_Pages.Reservation();
             reservation.TopLevel = false;
             container.Controls.Add(reservation);
             reservation.FormBorderStyle = FormBorderStyle.None;
@@ -58,7 +58,7 @@ namespace Project
         private void servis_button_Click(object sender, EventArgs e)
         {
             container.Controls.Clear();
-            Pages.Servis servis = new Pages.Servis();
+            User_Pages.Servis servis = new User_Pages.Servis();
             servis.TopLevel = false;
             container.Controls.Add(servis);
             servis.FormBorderStyle = FormBorderStyle.None;

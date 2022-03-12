@@ -3,8 +3,8 @@ namespace Project
     public partial class Login : Form
     {
 
-        public User testUser = new User("dskjlab32bjk_32BJ32", "jakub", "czepiec", "kuba@kuba", "kuba", new DateOnly(100, 10, 10));
-
+        public User testUser = new User("dskjlab32bjk_32BJ32", "jakub", "czepiec", "kuba@kuba", "kuba", new DateOnly(100, 10, 10), "user");
+        public User testadnim = new User("dskjlab32bjk_32BJ32", "admin", "czepiec", "admin", "admin", new DateOnly(100, 10, 10), "user");
 
         public Login()
         {
@@ -38,10 +38,16 @@ namespace Project
             //    DialogResult result = MessageBox.Show("Faild Login");
             //}
 
+            //this.Hide();
+            //User_Window user_Window = new User_Window(testUser);
+            //user_Window.ShowDialog();
+            //this.Show();
+
             this.Hide();
-            User_Window user_Window = new User_Window(testUser);
-            user_Window.ShowDialog();
+            Admin_page admin = new Admin_page(testUser);
+            admin.ShowDialog();
             this.Show();
+
         }
     }
 }

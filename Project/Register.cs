@@ -78,7 +78,8 @@ namespace Project
                     this.registerLNameEntry.Text,
                     this.registerEmailEntry.Text,
                     this.registerEmailEntry.Text,
-                    DateOnly.FromDateTime(this.registerDateTimePicker.Value.Date)
+                    DateOnly.FromDateTime(this.registerDateTimePicker.Value.Date),
+                    "user"
                     );
 
                 DialogResult result = MessageBox.Show("Register Completed");
