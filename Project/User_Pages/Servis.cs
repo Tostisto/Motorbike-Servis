@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project.Pages
+namespace Project.User_Pages
 {
-    public partial class Objednavka : Form
+    public partial class Servis : Form
     {
-        public Objednavka()
+        public Servis()
         {
             InitializeComponent();
         }
