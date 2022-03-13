@@ -38,10 +38,10 @@ namespace Project
             //    DialogResult result = MessageBox.Show("Faild Login");
             //}
 
-            //this.Hide();
-            //User_Window user_Window = new User_Window(testUser);
-            //user_Window.ShowDialog();
-            //this.Show();
+            this.Hide();
+            User_Window user_Window = new User_Window(testUser);
+            user_Window.ShowDialog();
+            this.Show();
 
             this.Hide();
             Admin_page admin = new Admin_page(testUser);

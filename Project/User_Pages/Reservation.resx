@@ -61,7 +61,7 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="motorbike_preview_image.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYa
         HSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgo
@@ -899,7 +899,7 @@
         n6VAlsP/AL6pUpExErxESvEREcRPEpx8REB+n0DhIT/8OyiUSiJKlEolEon/2Q==
 </value>
   </data>
-  <data name="textBox3.Text" xml:space="preserve">
+  <data name="motorbike_description.Text" xml:space="preserve">
     <value>1980 saw the production of Yamaha’s RD350LC, replacing its predecessor the RD350. Designed to break the European market due to the tightening belt of US emissions with its smaller capacity machine, RD250LC, the RD350LC was fitted with a parallel twin two-stroke engine with the identical stroke of its older brother. New features were added including liquid cooling and a new exhaust to meet emission regulations. Yamaha successfully sold over 10,000 units in Europe in the first 9 months of production.
 
 “Have had many bikes from Kawasaki to Yamaha’s to Honda’s and Suzuki’s. My favourite, when I passed by test RD350 YPVS, so god damn quick and wasn’t many that kept with it. My CX 500, ugly bike, but so Honda. Yamaha Thunder Ace, brilliant bike in so many ways, and have had 3 R1’s and now have the latest one. What a fantastic machine it loved the Isle of Man this year.” Greg Nelson

@@ -42,19 +42,21 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.motorbikeBrand = new System.Windows.Forms.Label();
-            this.brand_combobox = new System.Windows.Forms.ComboBox();
+            this.motorbike_combobox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.motorbike_preview_image = new System.Windows.Forms.PictureBox();
+            this.motorbike_description = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.price = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.motorbike_preview_image)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,7 +81,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkSalmon;
+            this.panel2.BackColor = System.Drawing.SystemColors.Window;
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.textBox2);
@@ -89,7 +91,7 @@
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.motorbikeBrand);
-            this.panel2.Controls.Add(this.brand_combobox);
+            this.panel2.Controls.Add(this.motorbike_combobox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
@@ -122,6 +124,7 @@
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Location = new System.Drawing.Point(175, 377);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -154,6 +157,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Location = new System.Drawing.Point(175, 119);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(192, 27);
@@ -177,14 +181,15 @@
             this.motorbikeBrand.TabIndex = 0;
             this.motorbikeBrand.Text = "Motorbike Brand";
             // 
-            // brand_combobox
+            // motorbike_combobox
             // 
-            this.brand_combobox.DataSource = this.userBindingSource;
-            this.brand_combobox.FormattingEnabled = true;
-            this.brand_combobox.Location = new System.Drawing.Point(175, 84);
-            this.brand_combobox.Name = "brand_combobox";
-            this.brand_combobox.Size = new System.Drawing.Size(192, 28);
-            this.brand_combobox.TabIndex = 1;
+            this.motorbike_combobox.DataSource = this.userBindingSource;
+            this.motorbike_combobox.FormattingEnabled = true;
+            this.motorbike_combobox.Location = new System.Drawing.Point(175, 84);
+            this.motorbike_combobox.Name = "motorbike_combobox";
+            this.motorbike_combobox.Size = new System.Drawing.Size(192, 28);
+            this.motorbike_combobox.TabIndex = 1;
+            this.motorbike_combobox.SelectedIndexChanged += new System.EventHandler(this.motorbike_combobox_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -198,10 +203,11 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Window;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox3, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.motorbike_preview_image, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.motorbike_description, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.panel3, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
@@ -213,33 +219,36 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(471, 579);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // pictureBox1
+            // motorbike_preview_image
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(465, 147);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.motorbike_preview_image.BackColor = System.Drawing.SystemColors.Window;
+            this.motorbike_preview_image.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.motorbike_preview_image.Image = ((System.Drawing.Image)(resources.GetObject("motorbike_preview_image.Image")));
+            this.motorbike_preview_image.Location = new System.Drawing.Point(3, 3);
+            this.motorbike_preview_image.Name = "motorbike_preview_image";
+            this.motorbike_preview_image.Size = new System.Drawing.Size(465, 147);
+            this.motorbike_preview_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.motorbike_preview_image.TabIndex = 3;
+            this.motorbike_preview_image.TabStop = false;
             // 
-            // textBox3
+            // motorbike_description
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Location = new System.Drawing.Point(3, 243);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox3.Size = new System.Drawing.Size(465, 333);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.Text = resources.GetString("textBox3.Text");
+            this.motorbike_description.BackColor = System.Drawing.SystemColors.Window;
+            this.motorbike_description.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.motorbike_description.Location = new System.Drawing.Point(3, 243);
+            this.motorbike_description.Multiline = true;
+            this.motorbike_description.Name = "motorbike_description";
+            this.motorbike_description.ReadOnly = true;
+            this.motorbike_description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.motorbike_description.Size = new System.Drawing.Size(465, 333);
+            this.motorbike_description.TabIndex = 2;
+            this.motorbike_description.Text = resources.GetString("motorbike_description.Text");
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Window;
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.price);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 156);
@@ -247,14 +256,33 @@
             this.panel3.Size = new System.Drawing.Size(465, 81);
             this.panel3.TabIndex = 4;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(113, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(25, 20);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Kč";
+            // 
+            // price
+            // 
+            this.price.AutoSize = true;
+            this.price.Location = new System.Drawing.Point(68, 13);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(39, 20);
+            this.price.TabIndex = 1;
+            this.price.Text = "-----";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(15, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 20);
+            this.label5.Size = new System.Drawing.Size(47, 20);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Price: 3200 Kč";
+            this.label5.Text = "Price:";
             // 
             // Reservation
             // 
@@ -271,7 +299,7 @@
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.motorbike_preview_image)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -291,12 +319,14 @@
         private TextBox textBox1;
         private Label label1;
         private Label motorbikeBrand;
-        private ComboBox brand_combobox;
+        private ComboBox motorbike_combobox;
         private Panel panel1;
-        private TextBox textBox3;
-        private PictureBox pictureBox1;
+        private TextBox motorbike_description;
+        private PictureBox motorbike_preview_image;
         private TableLayoutPanel tableLayoutPanel2;
         private Panel panel3;
         private Label label5;
+        private Label label6;
+        private Label price;
     }
 }
