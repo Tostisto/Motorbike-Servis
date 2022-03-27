@@ -28,5 +28,17 @@ namespace Project
             new_Motorbike.Show();
             this.indicator.Location = new Point(this.objednavka_btn.Location.X, this.objednavka_btn.Location.Y);
         }
+
+        private void reservation_button_Click(object sender, EventArgs e)
+        {
+            container.Controls.Clear();
+            Admin_Pages.ServisManagement servisManagement = new Admin_Pages.ServisManagement();
+            servisManagement.TopLevel = false;
+            container.Controls.Add(servisManagement);
+            servisManagement.FormBorderStyle = FormBorderStyle.None;
+            servisManagement.Dock = DockStyle.Fill;
+            servisManagement.Show();
+            this.indicator.Location = new Point(this.servis_manage_Button.Location.X, this.servis_manage_Button.Location.Y);
+        }
     }
 }

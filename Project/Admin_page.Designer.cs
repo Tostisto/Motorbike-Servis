@@ -37,7 +37,7 @@
             this.indicator = new System.Windows.Forms.Panel();
             this.logout_button = new System.Windows.Forms.Button();
             this.servis_button = new System.Windows.Forms.Button();
-            this.reservation_button = new System.Windows.Forms.Button();
+            this.servis_manage_Button = new System.Windows.Forms.Button();
             this.objednavka_btn = new System.Windows.Forms.Button();
             this.container = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -104,7 +104,7 @@
             this.panel2.Controls.Add(this.indicator);
             this.panel2.Controls.Add(this.logout_button);
             this.panel2.Controls.Add(this.servis_button);
-            this.panel2.Controls.Add(this.reservation_button);
+            this.panel2.Controls.Add(this.servis_manage_Button);
             this.panel2.Controls.Add(this.objednavka_btn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 49);
@@ -152,21 +152,22 @@
             this.servis_button.Text = "Servis";
             this.servis_button.UseVisualStyleBackColor = false;
             // 
-            // reservation_button
+            // servis_manage_Button
             // 
-            this.reservation_button.BackColor = System.Drawing.SystemColors.Window;
-            this.reservation_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.reservation_button.Dock = System.Windows.Forms.DockStyle.Top;
-            this.reservation_button.FlatAppearance.BorderSize = 0;
-            this.reservation_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reservation_button.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.reservation_button.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.reservation_button.Location = new System.Drawing.Point(0, 60);
-            this.reservation_button.Name = "reservation_button";
-            this.reservation_button.Size = new System.Drawing.Size(250, 60);
-            this.reservation_button.TabIndex = 1;
-            this.reservation_button.Text = "Nová rezervace";
-            this.reservation_button.UseVisualStyleBackColor = false;
+            this.servis_manage_Button.BackColor = System.Drawing.SystemColors.Window;
+            this.servis_manage_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.servis_manage_Button.Dock = System.Windows.Forms.DockStyle.Top;
+            this.servis_manage_Button.FlatAppearance.BorderSize = 0;
+            this.servis_manage_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.servis_manage_Button.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.servis_manage_Button.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.servis_manage_Button.Location = new System.Drawing.Point(0, 60);
+            this.servis_manage_Button.Name = "servis_manage_Button";
+            this.servis_manage_Button.Size = new System.Drawing.Size(250, 60);
+            this.servis_manage_Button.TabIndex = 1;
+            this.servis_manage_Button.Text = "Manage Servis";
+            this.servis_manage_Button.UseVisualStyleBackColor = false;
+            this.servis_manage_Button.Click += new System.EventHandler(this.reservation_button_Click);
             // 
             // objednavka_btn
             // 
@@ -222,7 +223,7 @@
         private Panel indicator;
         private Button logout_button;
         private Button servis_button;
-        private Button reservation_button;
+        private Button servis_manage_Button;
         private Button objednavka_btn;
         private Panel container;
     }
