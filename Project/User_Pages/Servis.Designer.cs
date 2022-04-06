@@ -119,7 +119,14 @@
             // 
             this.place.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.place.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.place.FormattingEnabled = true;
+            this.place.Items.AddRange(new object[] {
+            "Praha",
+            "Brno",
+            "Ostrava",
+            "Znojmo",
+            "Pardubice"});
             this.place.Location = new System.Drawing.Point(198, 146);
             this.place.Name = "place";
             this.place.Size = new System.Drawing.Size(191, 28);
@@ -183,6 +190,7 @@
             this.add_servis.TabIndex = 13;
             this.add_servis.Text = "Add request";
             this.add_servis.UseVisualStyleBackColor = true;
+            this.add_servis.Click += new System.EventHandler(this.add_servis_Click);
             // 
             // Servis
             // 

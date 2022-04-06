@@ -40,5 +40,10 @@ namespace Project
             servisManagement.Show();
             this.indicator.Location = new Point(this.servis_manage_Button.Location.X, this.servis_manage_Button.Location.Y);
         }
+
+        private void logout_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

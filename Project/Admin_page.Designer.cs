@@ -36,7 +36,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.indicator = new System.Windows.Forms.Panel();
             this.logout_button = new System.Windows.Forms.Button();
-            this.servis_button = new System.Windows.Forms.Button();
             this.servis_manage_Button = new System.Windows.Forms.Button();
             this.objednavka_btn = new System.Windows.Forms.Button();
             this.container = new System.Windows.Forms.Panel();
@@ -103,7 +102,6 @@
             this.panel2.BackColor = System.Drawing.SystemColors.Window;
             this.panel2.Controls.Add(this.indicator);
             this.panel2.Controls.Add(this.logout_button);
-            this.panel2.Controls.Add(this.servis_button);
             this.panel2.Controls.Add(this.servis_manage_Button);
             this.panel2.Controls.Add(this.objednavka_btn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -135,22 +133,7 @@
             this.logout_button.TabIndex = 3;
             this.logout_button.Text = "Log out";
             this.logout_button.UseVisualStyleBackColor = false;
-            // 
-            // servis_button
-            // 
-            this.servis_button.BackColor = System.Drawing.SystemColors.Window;
-            this.servis_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.servis_button.Dock = System.Windows.Forms.DockStyle.Top;
-            this.servis_button.FlatAppearance.BorderSize = 0;
-            this.servis_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.servis_button.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.servis_button.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.servis_button.Location = new System.Drawing.Point(0, 120);
-            this.servis_button.Name = "servis_button";
-            this.servis_button.Size = new System.Drawing.Size(250, 60);
-            this.servis_button.TabIndex = 2;
-            this.servis_button.Text = "Servis";
-            this.servis_button.UseVisualStyleBackColor = false;
+            this.logout_button.Click += new System.EventHandler(this.logout_button_Click);
             // 
             // servis_manage_Button
             // 
@@ -222,7 +205,6 @@
         private Panel panel2;
         private Panel indicator;
         private Button logout_button;
-        private Button servis_button;
         private Button servis_manage_Button;
         private Button objednavka_btn;
         private Panel container;

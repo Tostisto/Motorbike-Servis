@@ -16,7 +16,6 @@ namespace Project
         {
             InitializeComponent();
 
-
             // Password textbox
             this.registerPasswordEntry.Text = "";
             this.registerPasswordEntry.PasswordChar = '*';
@@ -33,8 +32,6 @@ namespace Project
                 this.registerBTN.Enabled = false;
             }
         }
-
-
 
         private void registerEmailEntry_Validating(object sender, CancelEventArgs e)
         {
@@ -66,21 +63,22 @@ namespace Project
                 errorProvider.SetError(this.registerPasswordEntry, "");
             }
         }
-
-
+        
         private void registerBTN_Click(object sender, EventArgs e)
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
                 User newUser = new User(
-                    System.Guid.NewGuid().ToString(),
+                    0,
                     this.registerFNameEntry.Text,
                     this.registerLNameEntry.Text,
                     this.registerEmailEntry.Text,
                     this.registerEmailEntry.Text,
-                    DateOnly.FromDateTime(this.registerDateTimePicker.Value.Date),
+                    DateOnly.FromDateTime(this.registerDateTimePicker.Value.Date).ToString(),
                     "user"
                     );
+
+                Database.insert<User>(newUser);
 
                 DialogResult result = MessageBox.Show("Register Completed");
                 if(result == System.Windows.Forms.DialogResult.OK)

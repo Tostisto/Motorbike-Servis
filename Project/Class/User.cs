@@ -8,24 +8,25 @@ namespace Project
 {
     public class User
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public DateOnly Birth_Date { get; set; }
+        public string Date_of_birth { get; set; }
         public string Role { get; set; }
 
-        public User(string Id, string firstname, string lastname, string email, string password, DateOnly birth_date, string role)
+        public User() { }
+
+        public User(int Id, string firstname, string lastname, string email, string password, string birth_date, string role)
         {
             this.Id = Id;
             this.FirstName = firstname;
             this.LastName = lastname;
             this.Email = email;
             this.Password = password;
-            this.Birth_Date = birth_date;
-            this.Role = Role;
+            this.Date_of_birth = birth_date;
+            this.Role = role;
         }
-
     }
 }

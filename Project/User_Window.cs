@@ -12,16 +12,18 @@ namespace Project
 {
     public partial class User_Window : Form
     {
+        public User user = new User();
+        
         public User_Window(User loginUser)
         {
-            User user = loginUser;
+            user = loginUser;
 
             InitializeComponent();
 
             this.userInfoName.Text = user.FirstName + " " + user.LastName;
 
             container.Controls.Clear();
-            User_Pages.Objednavka objednavka = new User_Pages.Objednavka();
+            User_Pages.Objednavka objednavka = new User_Pages.Objednavka(user);
             objednavka.TopLevel = false;
             container.Controls.Add(objednavka);
             objednavka.FormBorderStyle = FormBorderStyle.None;
@@ -33,7 +35,7 @@ namespace Project
         private void objednavka_btn_Click(object sender, EventArgs e)
         {
             container.Controls.Clear();
-            User_Pages.Objednavka objednavka = new User_Pages.Objednavka();
+            User_Pages.Objednavka objednavka = new User_Pages.Objednavka(user);
             objednavka.TopLevel = false;
             container.Controls.Add(objednavka);
             objednavka.FormBorderStyle = FormBorderStyle.None;
@@ -58,7 +60,7 @@ namespace Project
         private void servis_button_Click(object sender, EventArgs e)
         {
             container.Controls.Clear();
-            User_Pages.Servis servis = new User_Pages.Servis();
+            User_Pages.Servis servis = new User_Pages.Servis(user);
             servis.TopLevel = false;
             container.Controls.Add(servis);
             servis.FormBorderStyle = FormBorderStyle.None;

@@ -13,21 +13,17 @@ namespace Project.Admin_Pages
 {
     public partial class ServisManagement : Form
     {
-        public static BindingList<Services> list_services = new BindingList<Services>()
-        {
-            new Services(0, "BMW", "Test", 2000, "JDKS32JKD", "Brno", "Some random text", false),
-            new Services(1, "BMW", "Test", 1998, "WE32DSDS", "Brno", "Some random text", false),
-            new Services(2, "BMW", "Test", 2005, "32DSD32D", "Praha", "Some random text", false),
-            new Services(3, "BMW", "Test", 2012, "JDKS32JKD", "Ostrava", "Some random text", false),
-            new Services(4, "BMW", "Test", 2008, "JDKS32JKD", "olomouc", "Some random text", false)
-        };
+        public static BindingList<Services> list_services = new BindingList<Services>();
 
         public ServisManagement()
         {
             InitializeComponent();
 
+            list_services = Database.select<Services>();
+
             this.servicesManage.AutoGenerateColumns = false;
             this.servicesManage.DataSource = list_services;
+
 
             this.servicesManage.Columns.Add(new DataGridViewTextBoxColumn()
             {
@@ -71,7 +67,6 @@ namespace Project.Admin_Pages
             aceptBTN.DefaultCellStyle.BackColor = Color.Green;
             this.servicesManage.Columns.Add(aceptBTN);
 
-
             this.servicesManage.Columns.Add(new DataGridViewButtonColumn()
             {
                 Text = "Details",
@@ -79,8 +74,6 @@ namespace Project.Admin_Pages
                 Name = "detailBTN",
                 UseColumnTextForButtonValue = true
             });
-
-
         }
 
         private void servicesManage_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -99,11 +92,16 @@ namespace Project.Admin_Pages
             }
             else if (column.Name == "dismissBTN")
             {
-                // TODO
+                Services selected = list_services[e.RowIndex];
+                selected.Status = "dismissed";
+                Database.Update<Services>(selected);
+
             }
             else if(column.Name == "acceptBTN")
             {
-                // TODO
+                Services selected = list_services[e.RowIndex];
+                selected.Status = "accepted";
+                Database.Update<Services>(selected);                
             }
         }
     }

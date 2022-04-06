@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project;
 
 namespace Project.Admin_Pages
 {
@@ -35,7 +36,10 @@ namespace Project.Admin_Pages
         {
             Motorbike new_motorbike = new Motorbike("id", this.admin_add_motorbike_name.Text, int.Parse(this.admin_add_motorbike_price.Text), "free", this.admin_add_motorbike_description.Text, image_link.Text);
 
-            var test = new_motorbike;
+            Database.insert<Motorbike>(new_motorbike);
+
+            MessageBox.Show("Motorbike added", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void admin_add_motorbike_price_Validating(object sender, CancelEventArgs e)

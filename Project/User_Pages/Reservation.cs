@@ -39,7 +39,7 @@ namespace Project.User_Pages
 
             try
             {
-                this.motorbike_preview_image.Load(motorbike.Image_link);
+                this.motorbike_preview_image.Load(motorbike.Image);
                 this.price.Text = motorbike.Price.ToString();
                 this.motorbike_description.Text = motorbike.Description.ToString();
             }
