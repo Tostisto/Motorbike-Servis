@@ -8,19 +8,27 @@ namespace Project
 {
     public class Motorbike
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }
-        public string Status { get; set; }
         public string Description { get; set; }
         public string? Image { get; set; }
 
-        public Motorbike(string Id, string Name, int Price, string status, string description, string image)
+        public Motorbike() { }
+        
+        public Motorbike(string name, int price, string description, string? image)
+        {
+            Name = name;
+            Price = price;
+            Description = description;
+            Image = image;
+        }
+
+        public Motorbike(int Id, string Name, int Price, string description, string image)
         {
             this.Id = Id;
             this.Name = Name;
             this.Price = Price;
-            this.Status = status;
             this.Description = description;
             this.Image = image;
         }

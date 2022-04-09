@@ -17,7 +17,6 @@ namespace Project.User_Pages
         BindingList<Orders> user_orders = new BindingList<Orders>();
 
         User user = new User();
-
         public Objednavka(User user)
         {
             this.user = user;

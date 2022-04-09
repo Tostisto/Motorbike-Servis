@@ -19,7 +19,8 @@ namespace Project.Admin_Pages
         {
             InitializeComponent();
 
-            list_services = Database.select<Services>();
+            //list_services = Database.select<Services>();
+            list_services = Database.SpecificSelect<Services>(@"status = 'new'");
 
             this.servicesManage.AutoGenerateColumns = false;
             this.servicesManage.DataSource = list_services;
@@ -75,11 +76,13 @@ namespace Project.Admin_Pages
                 UseColumnTextForButtonValue = true
             });
         }
-
+        
         private void servicesManage_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var column = this.servicesManage.Columns[e.ColumnIndex];
             var row = this.servicesManage.Rows[e.RowIndex];
+
+            Services selected = list_services[e.RowIndex];
 
             if (column == null)
             {
@@ -87,21 +90,26 @@ namespace Project.Admin_Pages
             }
             else if (column.Name == "detailBTN")
             {
-                servisDetail detail = new servisDetail();
+                servisDetail detail = new servisDetail(selected);
                 detail.ShowDialog();
+                list_services.RemoveAt(e.RowIndex);
+
+                // TODO : refresh list
+                list_services = Database.SpecificSelect<Services>(@"status = 'new'");
+                this.servicesManage.DataSource = list_services;
             }
             else if (column.Name == "dismissBTN")
             {
-                Services selected = list_services[e.RowIndex];
-                selected.Status = "dismissed";
+                selected.Status = "Dismissed";
                 Database.Update<Services>(selected);
+                list_services.RemoveAt(e.RowIndex);
 
             }
             else if(column.Name == "acceptBTN")
             {
-                Services selected = list_services[e.RowIndex];
-                selected.Status = "accepted";
-                Database.Update<Services>(selected);                
+                selected.Status = "Accepted";
+                Database.Update<Services>(selected);
+                list_services.RemoveAt(e.RowIndex);
             }
         }
     }

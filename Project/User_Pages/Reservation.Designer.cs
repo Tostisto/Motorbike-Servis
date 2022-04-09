@@ -37,7 +37,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.calendar = new System.Windows.Forms.MonthCalendar();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.motorbikeBrand = new System.Windows.Forms.Label();
@@ -85,7 +85,7 @@
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.monthCalendar1);
+            this.panel2.Controls.Add(this.calendar);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.motorbikeBrand);
@@ -105,6 +105,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Book";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 
@@ -136,11 +137,12 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Rental Dates:";
             // 
-            // monthCalendar1
+            // calendar
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(187, 121);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 4;
+            this.calendar.Location = new System.Drawing.Point(187, 121);
+            this.calendar.Name = "calendar";
+            this.calendar.TabIndex = 4;
+            this.calendar.TitleForeColor = System.Drawing.SystemColors.ActiveBorder;
             // 
             // textBox1
             // 
@@ -301,7 +303,7 @@
         private TextBox textBox2;
         private Label label3;
         private Label label2;
-        private MonthCalendar monthCalendar1;
+        private MonthCalendar calendar;
         private TextBox textBox1;
         private Label label1;
         private Label motorbikeBrand;

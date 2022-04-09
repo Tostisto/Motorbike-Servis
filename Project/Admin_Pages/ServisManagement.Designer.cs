@@ -34,6 +34,10 @@
             // 
             // servicesManage
             // 
+            this.servicesManage.AllowUserToAddRows = false;
+            this.servicesManage.AllowUserToDeleteRows = false;
+            this.servicesManage.AllowUserToResizeColumns = false;
+            this.servicesManage.AllowUserToResizeRows = false;
             this.servicesManage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.servicesManage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.servicesManage.Location = new System.Drawing.Point(0, 0);

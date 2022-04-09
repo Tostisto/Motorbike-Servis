@@ -42,6 +42,10 @@
             // 
             // orders_datagrid
             // 
+            this.orders_datagrid.AllowUserToAddRows = false;
+            this.orders_datagrid.AllowUserToDeleteRows = false;
+            this.orders_datagrid.AllowUserToResizeColumns = false;
+            this.orders_datagrid.AllowUserToResizeRows = false;
             this.orders_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.orders_datagrid.GridColor = System.Drawing.SystemColors.Control;
             this.orders_datagrid.Location = new System.Drawing.Point(0, 12);

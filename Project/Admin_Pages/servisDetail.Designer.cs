@@ -34,15 +34,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.brand_textbox = new System.Windows.Forms.TextBox();
+            this.model_textbox = new System.Windows.Forms.TextBox();
+            this.year_textbox = new System.Windows.Forms.TextBox();
+            this.spz_textbox = new System.Windows.Forms.TextBox();
+            this.show_textbox = new System.Windows.Forms.TextBox();
+            this.description_textbox = new System.Windows.Forms.TextBox();
             this.acceptBTN = new System.Windows.Forms.Button();
             this.dismissBTN = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.userName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -100,63 +100,63 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Description:";
             // 
-            // textBox1
+            // brand_textbox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox1.Location = new System.Drawing.Point(181, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 6;
+            this.brand_textbox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.brand_textbox.Location = new System.Drawing.Point(181, 56);
+            this.brand_textbox.Name = "brand_textbox";
+            this.brand_textbox.ReadOnly = true;
+            this.brand_textbox.Size = new System.Drawing.Size(125, 27);
+            this.brand_textbox.TabIndex = 6;
             // 
-            // textBox2
+            // model_textbox
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox2.Location = new System.Drawing.Point(181, 89);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
-            this.textBox2.TabIndex = 7;
+            this.model_textbox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.model_textbox.Location = new System.Drawing.Point(181, 89);
+            this.model_textbox.Name = "model_textbox";
+            this.model_textbox.ReadOnly = true;
+            this.model_textbox.Size = new System.Drawing.Size(125, 27);
+            this.model_textbox.TabIndex = 7;
             // 
-            // textBox3
+            // year_textbox
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox3.Location = new System.Drawing.Point(181, 122);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(125, 27);
-            this.textBox3.TabIndex = 8;
+            this.year_textbox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.year_textbox.Location = new System.Drawing.Point(181, 122);
+            this.year_textbox.Name = "year_textbox";
+            this.year_textbox.ReadOnly = true;
+            this.year_textbox.Size = new System.Drawing.Size(125, 27);
+            this.year_textbox.TabIndex = 8;
             // 
-            // textBox4
+            // spz_textbox
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox4.Location = new System.Drawing.Point(380, 59);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(125, 27);
-            this.textBox4.TabIndex = 9;
+            this.spz_textbox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.spz_textbox.Location = new System.Drawing.Point(380, 59);
+            this.spz_textbox.Name = "spz_textbox";
+            this.spz_textbox.ReadOnly = true;
+            this.spz_textbox.Size = new System.Drawing.Size(125, 27);
+            this.spz_textbox.TabIndex = 9;
             // 
-            // textBox5
+            // show_textbox
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox5.Location = new System.Drawing.Point(380, 92);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(125, 27);
-            this.textBox5.TabIndex = 10;
+            this.show_textbox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.show_textbox.Location = new System.Drawing.Point(380, 92);
+            this.show_textbox.Name = "show_textbox";
+            this.show_textbox.ReadOnly = true;
+            this.show_textbox.Size = new System.Drawing.Size(125, 27);
+            this.show_textbox.TabIndex = 10;
             // 
-            // textBox6
+            // description_textbox
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.description_textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox6.Location = new System.Drawing.Point(181, 155);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(520, 226);
-            this.textBox6.TabIndex = 11;
+            this.description_textbox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.description_textbox.Location = new System.Drawing.Point(181, 155);
+            this.description_textbox.Multiline = true;
+            this.description_textbox.Name = "description_textbox";
+            this.description_textbox.ReadOnly = true;
+            this.description_textbox.Size = new System.Drawing.Size(520, 226);
+            this.description_textbox.TabIndex = 11;
             // 
             // acceptBTN
             // 
@@ -169,6 +169,7 @@
             this.acceptBTN.TabIndex = 12;
             this.acceptBTN.Text = "Accept";
             this.acceptBTN.UseVisualStyleBackColor = false;
+            this.acceptBTN.Click += new System.EventHandler(this.acceptBTN_Click);
             // 
             // dismissBTN
             // 
@@ -181,15 +182,16 @@
             this.dismissBTN.TabIndex = 13;
             this.dismissBTN.Text = "Dismiss";
             this.dismissBTN.UseVisualStyleBackColor = false;
+            this.dismissBTN.Click += new System.EventHandler(this.dismissBTN_Click);
             // 
-            // textBox8
+            // userName
             // 
-            this.textBox8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox8.Location = new System.Drawing.Point(181, 23);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(324, 27);
-            this.textBox8.TabIndex = 16;
+            this.userName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.userName.Location = new System.Drawing.Point(181, 23);
+            this.userName.Name = "userName";
+            this.userName.ReadOnly = true;
+            this.userName.Size = new System.Drawing.Size(324, 27);
+            this.userName.TabIndex = 16;
             // 
             // label8
             // 
@@ -205,16 +207,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.userName);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dismissBTN);
             this.Controls.Add(this.acceptBTN);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.description_textbox);
+            this.Controls.Add(this.show_textbox);
+            this.Controls.Add(this.spz_textbox);
+            this.Controls.Add(this.year_textbox);
+            this.Controls.Add(this.model_textbox);
+            this.Controls.Add(this.brand_textbox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -236,15 +238,15 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
+        private TextBox brand_textbox;
+        private TextBox model_textbox;
+        private TextBox year_textbox;
+        private TextBox spz_textbox;
+        private TextBox show_textbox;
+        private TextBox description_textbox;
         private Button acceptBTN;
         private Button dismissBTN;
-        private TextBox textBox8;
+        private TextBox userName;
         private Label label8;
     }
 }

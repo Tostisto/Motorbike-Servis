@@ -34,7 +34,7 @@ namespace Project.Admin_Pages
 
         private void add_motorbike_BTN_Click(object sender, EventArgs e)
         {
-            Motorbike new_motorbike = new Motorbike("id", this.admin_add_motorbike_name.Text, int.Parse(this.admin_add_motorbike_price.Text), "free", this.admin_add_motorbike_description.Text, image_link.Text);
+            Motorbike new_motorbike = new Motorbike(this.admin_add_motorbike_name.Text, int.Parse(this.admin_add_motorbike_price.Text), this.admin_add_motorbike_description.Text, image_link.Text);
 
             Database.insert<Motorbike>(new_motorbike);
 

@@ -83,6 +83,7 @@
             // 
             // registerDateTimePicker
             // 
+            this.registerDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.registerDateTimePicker.Location = new System.Drawing.Point(329, 212);
             this.registerDateTimePicker.Name = "registerDateTimePicker";
             this.registerDateTimePicker.Size = new System.Drawing.Size(250, 27);
@@ -149,7 +150,7 @@
             this.registerPasswordEntry.TabIndex = 11;
             this.registerPasswordEntry.Validating += new System.ComponentModel.CancelEventHandler(this.registerPasswordEntry_Validating);
             // 
-            // errorProvider1
+            // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
             // 

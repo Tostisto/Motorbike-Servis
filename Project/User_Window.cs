@@ -48,7 +48,7 @@ namespace Project
         private void reservation_button_Click(object sender, EventArgs e)
         {
             container.Controls.Clear();
-            User_Pages.Reservation reservation = new User_Pages.Reservation();
+            User_Pages.Reservation reservation = new User_Pages.Reservation(user);
             reservation.TopLevel = false;
             container.Controls.Add(reservation);
             reservation.FormBorderStyle = FormBorderStyle.None;

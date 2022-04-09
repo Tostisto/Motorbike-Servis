@@ -186,7 +186,7 @@ namespace Project
 
                 if (property.PropertyType == typeof(string))
                 {
-                    string update = $"update {obj.GetType().Name} set {property.Name} = '{property.GetValue(obj).ToString()}' where Id = {objectID}";
+                    string update = $"update {obj.GetType().Name} set {property.Name} = '{property.GetValue(obj)}' where Id = {objectID}";
 
                     using (SqliteConnection conn = new SqliteConnection(sqlConnection))
                     {

@@ -26,7 +26,7 @@ namespace Project.User_Pages
         {
             try
             {
-                Services newServis = new Services(user.Id, brand_textBox.Text, model_textBox.Text, (int)year_input.Value, spz_textbox.Text, place.SelectedText.ToString(), message_textBox.Text, "new");
+                Services newServis = new Services(user.Id, brand_textBox.Text, model_textBox.Text, (int)year_input.Value, spz_textbox.Text, place.SelectedItem.ToString(), message_textBox.Text, "new");
 
                 Database.insert<Services>(newServis);
 

@@ -15,9 +15,12 @@ namespace Project.Class
         public float Price { get; set; }
         public bool Status { get; set; }
 
-        public Orders(int id, string product, string service, float price, bool status)
+
+        public Orders(){}
+
+        public Orders(int userId, string product, string service, float price, bool status)
         {
-            Id = id;
+            UserId = userId;
             Product = product;
             Service = service;
             Price = price;
