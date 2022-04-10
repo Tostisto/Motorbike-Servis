@@ -212,7 +212,6 @@
             // 
             this.motorbike_preview_image.BackColor = System.Drawing.SystemColors.Window;
             this.motorbike_preview_image.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.motorbike_preview_image.Image = ((System.Drawing.Image)(resources.GetObject("motorbike_preview_image.Image")));
             this.motorbike_preview_image.Location = new System.Drawing.Point(3, 3);
             this.motorbike_preview_image.Name = "motorbike_preview_image";
             this.motorbike_preview_image.Size = new System.Drawing.Size(465, 147);

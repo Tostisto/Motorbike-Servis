@@ -94,7 +94,6 @@ namespace Project.Admin_Pages
                 detail.ShowDialog();
                 list_services.RemoveAt(e.RowIndex);
 
-                // TODO : refresh list
                 list_services = Database.SpecificSelect<Services>(@"status = 'new'");
                 this.servicesManage.DataSource = list_services;
             }

@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.invoiceBTN = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.orders_datagrid)).BeginInit();
             this.bottom_panel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -47,17 +48,19 @@
             this.orders_datagrid.AllowUserToResizeColumns = false;
             this.orders_datagrid.AllowUserToResizeRows = false;
             this.orders_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.orders_datagrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.orders_datagrid.GridColor = System.Drawing.SystemColors.Control;
-            this.orders_datagrid.Location = new System.Drawing.Point(0, 12);
+            this.orders_datagrid.Location = new System.Drawing.Point(0, 0);
             this.orders_datagrid.Name = "orders_datagrid";
             this.orders_datagrid.RowHeadersWidth = 51;
             this.orders_datagrid.RowTemplate.Height = 29;
-            this.orders_datagrid.Size = new System.Drawing.Size(800, 261);
+            this.orders_datagrid.Size = new System.Drawing.Size(800, 313);
             this.orders_datagrid.TabIndex = 0;
             // 
             // bottom_panel
             // 
             this.bottom_panel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bottom_panel.Controls.Add(this.invoiceBTN);
             this.bottom_panel.Controls.Add(this.label4);
             this.bottom_panel.Controls.Add(this.total_price);
             this.bottom_panel.Controls.Add(this.label2);
@@ -117,6 +120,17 @@
             this.panel1.Size = new System.Drawing.Size(800, 313);
             this.panel1.TabIndex = 2;
             // 
+            // invoiceBTN
+            // 
+            this.invoiceBTN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.invoiceBTN.Location = new System.Drawing.Point(626, 70);
+            this.invoiceBTN.Name = "invoiceBTN";
+            this.invoiceBTN.Size = new System.Drawing.Size(134, 29);
+            this.invoiceBTN.TabIndex = 4;
+            this.invoiceBTN.Text = "Make an invoice";
+            this.invoiceBTN.UseVisualStyleBackColor = true;
+            this.invoiceBTN.Click += new System.EventHandler(this.invoiceBTN_Click);
+            // 
             // Objednavka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -143,5 +157,6 @@
         private Label label2;
         private Label label1;
         private Panel panel1;
+        private Button invoiceBTN;
     }
 }

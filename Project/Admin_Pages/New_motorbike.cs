@@ -28,7 +28,8 @@ namespace Project.Admin_Pages
             }
             catch (InvalidOperationException)
             {
-                this.new_motorbike_image.Load("https://developers.google.cn/maps/documentation/streetview/images/error-image-generic.png");
+                this.new_motorbike_image.LoadAsync("https://developers.google.cn/maps/documentation/streetview/images/error-image-generic.png");
+                MessageBox.Show("Invalid URL", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -39,7 +40,6 @@ namespace Project.Admin_Pages
             Database.insert<Motorbike>(new_motorbike);
 
             MessageBox.Show("Motorbike added", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
 
         private void admin_add_motorbike_price_Validating(object sender, CancelEventArgs e)

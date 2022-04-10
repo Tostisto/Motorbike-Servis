@@ -25,8 +25,6 @@ namespace Project.User_Pages
             
             InitializeComponent();
             
-            //this.calendar.BoldedDates = new DateTime[] { DateTime.Today };
-
             motorbikes = Database.select<Motorbike>();
 
             this.motorbike_combobox.DataSource = motorbikes;
@@ -66,14 +64,13 @@ namespace Project.User_Pages
 
             try
             {
-                this.motorbike_preview_image.Load(motorbike.Image);
+                this.motorbike_preview_image.LoadAsync(motorbike.Image);
                 this.price.Text = motorbike.Price.ToString();
                 this.motorbike_description.Text = motorbike.Description.ToString();
-
             }
             catch (InvalidOperationException)
             {
-                this.motorbike_preview_image.Load("https://developers.google.cn/maps/documentation/streetview/images/error-image-generic.png");
+                this.motorbike_preview_image.LoadAsync("https://developers.google.cn/maps/documentation/streetview/images/error-image-generic.png");
             }
         }
 
@@ -114,8 +111,10 @@ namespace Project.User_Pages
             }
 
             Reservations newReservation = new Reservations(user.Id, selectedMotorbike.Id, this.calendar.SelectionStart.ToString(), this.calendar.SelectionEnd.ToString(), "Reserved");
-
             Database.insert<Reservations>(newReservation);
+
+            Orders order = new Orders(user.Id, selectedMotorbike.Name, "Reservation", price, false);
+            Database.insert<Orders>(order);
 
             MessageBox.Show("Reservation Successful", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
