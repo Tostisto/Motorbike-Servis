@@ -36,28 +36,36 @@ namespace Project
             string inputEmail = this.loginEmailEntry.Text;
             string inputPassword = this.loginPasswordEntry.Text;
 
-            //if (inputEmail == testUser.Email && inputPassword == testUser.Password)
-            //{
-            //    this.Hide();
-            //    User_Window user_Window = new User_Window(testUser);
-            //    user_Window.ShowDialog();
-            //    this.Show();
-            //}
-            //else
-            //{
-            //    DialogResult result = MessageBox.Show("Faild Login");
-            //}
+            if (inputEmail == "" || inputPassword == "")
+            {
+                MessageBox.Show("Please fill in all fields!");
+                return;
+            }
 
-            this.Hide();
-            User_Window user_Window = new User_Window(all_users[0]);
-            user_Window.ShowDialog();
-            this.Show();
+            User loginUser = new User();
+            loginUser = Database.SpecificSelect<User>($"email = '{inputEmail}' and password = '{inputPassword}'").FirstOrDefault();
 
-            this.Hide();
-            Admin_page admin = new Admin_page(all_users[0]);
-            admin.ShowDialog();
-            this.Show();
-
+            if (loginUser != null)
+            {
+                if(loginUser.Role == "admin")
+                {
+                    this.Hide();
+                    Admin_page admin = new Admin_page(all_users[0]);
+                    admin.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    this.Hide();
+                    User_Window user_Window = new User_Window(all_users[0]);
+                    user_Window.ShowDialog();
+                    this.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Wrong email or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
