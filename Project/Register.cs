@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -35,35 +36,39 @@ namespace Project
 
         private void registerEmailEntry_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(this.registerEmailEntry.Text))
-            {
-                e.Cancel = true;
-                this.registerEmailEntry.Focus();
-                this.errorProvider.SetError(this.registerEmailEntry, "Bad email");
-            }
-            else
+            Regex regexExpr = new Regex(@"^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,6}$");
+
+            if (regexExpr.IsMatch(this.registerEmailEntry.Text))
             {
                 e.Cancel = false;
                 errorProvider.SetError(this.registerEmailEntry, "");
             }
+            else
+            {
+                e.Cancel = true;
+                this.registerEmailEntry.Focus();
+                this.errorProvider.SetError(this.registerEmailEntry, "Wrong format of the specified email.");
+            }
+
         }
 
         private void registerPasswordEntry_Validating(object sender, CancelEventArgs e)
         {
+            Regex regexExpr = new Regex(@"^[a-zA-Z0-9]{6,10}");
 
-            if (this.registerPasswordEntry.Text.Length < 5)
-            {
-                e.Cancel = true;
-                this.registerPassword.Focus();
-                errorProvider.SetError(this.registerPasswordEntry, $"The password must be 5 characters long.");
-            }
-            else
+            if (regexExpr.IsMatch(this.registerPasswordEntry.Text))
             {
                 e.Cancel = false;
                 errorProvider.SetError(this.registerPasswordEntry, "");
             }
+            else
+            {
+                e.Cancel = true;
+                this.registerEmailEntry.Focus();
+                this.errorProvider.SetError(this.registerPasswordEntry, "The password must have at least 6 characters, of which at least one number and one uppercase character");
+            }
         }
-        
+
         private void registerBTN_Click(object sender, EventArgs e)
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
