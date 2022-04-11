@@ -13,12 +13,12 @@ namespace Project.Class
         public string Product { get; set; }
         public string Service { get; set; }
         public float Price { get; set; }
-        public bool Status { get; set; }
+        public int Status { get; set; }
 
 
         public Orders(){}
 
-        public Orders(int userId, string product, string service, float price, bool status)
+        public Orders(int userId, string product, string service, float price, int status)
         {
             UserId = userId;
             Product = product;

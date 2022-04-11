@@ -18,6 +18,8 @@ namespace Project.User_Pages
 
         BindingList<Orders> user_orders = new BindingList<Orders>();
 
+        float totalPrice = 0;
+
         User user = new User();
 
         static string filePath;
@@ -28,7 +30,7 @@ namespace Project.User_Pages
             
             InitializeComponent();
 
-            user_orders = Database.SpecificSelect<Orders>($"UserID = {user.Id}");
+            user_orders = Database.SpecificSelect<Orders>($"UserID = {user.Id} and Status = 0");
 
             this.orders_datagrid.AutoGenerateColumns = false;
             this.orders_datagrid.DataSource = user_orders;
@@ -59,6 +61,10 @@ namespace Project.User_Pages
                 HeaderText = "Price",
                 DataPropertyName = nameof(Orders.Price)
             });
+
+             totalPrice = user_orders.Select(x => x.Price).Sum();
+
+            this.total_price.Text = totalPrice.ToString();
         }
 
         private void GeneratePDF()
@@ -110,6 +116,17 @@ namespace Project.User_Pages
             doc.Close();
         }
         
+        public async Task UpdateOrders()
+        {
+            foreach (var order in user_orders)
+            {
+                order.Status = 1;
+                Thread thread = new Thread(() => Database.Update<Orders>(order));
+                thread.Start();
+            }
+
+        }
+
         private void invoiceBTN_Click(object sender, EventArgs e)
         {
             SaveFileDialog save = new SaveFileDialog();
@@ -118,8 +135,13 @@ namespace Project.User_Pages
             save.ShowDialog();
             filePath = save.FileName;
 
-            Thread iThread = new Thread(GeneratePDF);
-            iThread.Start();
+            GeneratePDF();
+
+            Task.WaitAll(UpdateOrders());
+
+            this.user_orders.Clear();
+
+            MessageBox.Show("Thanks for your order!");
         }
     }
 }
