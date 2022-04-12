@@ -32,6 +32,15 @@ namespace Project.User_Pages
 
             user_orders = Database.SpecificSelect<Orders>($"UserID = {user.Id} and Status = 0");
 
+            if (user_orders.Count == 0)
+            {
+                this.invoiceBTN.Enabled = false;
+            }
+            else
+            {
+                this.invoiceBTN.Enabled = true;
+            }
+
             this.orders_datagrid.AutoGenerateColumns = false;
             this.orders_datagrid.DataSource = user_orders;
 
