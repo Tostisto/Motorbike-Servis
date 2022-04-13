@@ -7,9 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 using Project.Class;
+
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
+using System.Drawing;
+using Syncfusion.Pdf.Grid;
 
 namespace Project.User_Pages
 {
@@ -76,55 +79,47 @@ namespace Project.User_Pages
             this.total_price.Text = totalPrice.ToString();
         }
 
-        private void GeneratePDF()
+
+        public void GeneratePDF()
         {
-            var doc = new Document(PageSize.A4, 50, 50, 50, 50);
-            PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
-            doc.Open();
-
-
-            doc.AddTitle("This is Title");
-
-            doc.Add(new Paragraph("\n"));
-
-            var table = new PdfPTable(4);
-            table.WidthPercentage = 100;
-            table.SetWidths(new float[] { 1, 3, 1, 1 });
-
-            var cell = new PdfPCell(new Phrase("ID objednávky"));
-            cell.HorizontalAlignment = 1;
-            table.AddCell(cell);
-
-            cell = new PdfPCell(new Phrase("Product"));
-            cell.HorizontalAlignment = 1;
-            table.AddCell(cell);
-
-            cell = new PdfPCell(new Phrase("Typ servisu"));
-            cell.HorizontalAlignment = 1;
-            table.AddCell(cell);
-
-            cell = new PdfPCell(new Phrase("Cena"));
-            cell.HorizontalAlignment = 1;
-            table.AddCell(cell);
-
-            foreach (var order in user_orders)
+            using (PdfDocument document = new PdfDocument())
             {
-                table.AddCell(order.Id.ToString());
-                table.AddCell(order.Service);
-                table.AddCell(order.Product);
-                table.AddCell(order.Price.ToString());
+                PdfPage page = document.Pages.Add();
+                PdfGraphics graphics = page.Graphics;
+
+                PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 16);
+                graphics.DrawString("Objednavka", font, PdfBrushes.Black, new PointF(0, 20));
+
+
+                PdfFont smallfont = new PdfStandardFont(PdfFontFamily.Helvetica, 10);
+                graphics.DrawString($"Even though using lorem ipsum often arouses curiosity due to its resemblance to classical Latin", smallfont, PdfBrushes.Black, new PointF(0, 40));
+
+                graphics.DrawString($"Jmeno: {user.FirstName} {user.LastName}", smallfont, PdfBrushes.Black, new PointF(0, 60));
+                graphics.DrawString($"Email: {user.Email}", smallfont, PdfBrushes.Black, new PointF(0, 80));
+                graphics.DrawString($"Datum: {DateTime.Now}", smallfont, PdfBrushes.Black, new PointF(0, 100));
+
+                PdfGrid pdfGrid = new PdfGrid();
+                DataTable dataTable = new DataTable();
+                
+                dataTable.Columns.Add("ID");
+                dataTable.Columns.Add("Product");
+                dataTable.Columns.Add("Service");
+                dataTable.Columns.Add("Price");
+                
+                foreach(Orders or in user_orders)
+                {
+                    dataTable.Rows.Add(or.Id, or.Product, or.Service, or.Price + " Kč");
+                }
+
+
+                pdfGrid.DataSource = dataTable;
+                pdfGrid.Draw(page, new PointF(10, 140));
+
+                document.Save(filePath);
             }
-
-            doc.Add(table);
-
-            doc.Add(new Paragraph("\n"));
-            doc.Add(new Paragraph("\n"));
-
-            doc.Add(new Paragraph("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."));
-
-            doc.Close();
         }
-        
+
+
         public async Task UpdateOrders()
         {
             foreach (var order in user_orders)
@@ -133,7 +128,6 @@ namespace Project.User_Pages
                 Thread thread = new Thread(() => Database.Update<Orders>(order));
                 thread.Start();
             }
-
         }
 
         private void invoiceBTN_Click(object sender, EventArgs e)

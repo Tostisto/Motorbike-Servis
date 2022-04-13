@@ -4,14 +4,8 @@ namespace Project
 {
     public partial class Login : Form
     {
-
-        BindingList<User> all_users = new BindingList<User>();
-
         public Login()
         {
-
-            all_users = Database.select<User>();
-
             InitializeComponent();
 
 
@@ -20,7 +14,6 @@ namespace Project
                 Task.WhenAll(Database.initDatabase());
             }
 
-            // Password textbox
             this.loginPasswordEntry.Text = "";
             this.loginPasswordEntry.PasswordChar = '*';
         }
@@ -50,14 +43,14 @@ namespace Project
                 if(loginUser.Role == "admin")
                 {
                     this.Hide();
-                    Admin_page admin = new Admin_page(all_users[0]);
+                    Admin_page admin = new Admin_page(loginUser);
                     admin.ShowDialog();
                     this.Show();
                 }
-                else
+                else if (loginUser.Role == "user")
                 {
                     this.Hide();
-                    User_Window user_Window = new User_Window(all_users[0]);
+                    User_Window user_Window = new User_Window(loginUser);
                     user_Window.ShowDialog();
                     this.Show();
                 }
