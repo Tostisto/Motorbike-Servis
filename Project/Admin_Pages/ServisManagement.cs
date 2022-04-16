@@ -69,12 +69,14 @@ namespace Project.Admin_Pages
             });
         }
 
-        private void servicesManage_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void servicesManage_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var column = this.servicesManage.Columns[e.ColumnIndex];
             var row = this.servicesManage.Rows[e.RowIndex];
 
             Services selected = list_services[e.RowIndex];
+
+            User user = Database.SpecificSelect<User>($"Id = {selected.UserID}").FirstOrDefault();
 
             if (column == null)
             {
@@ -94,6 +96,7 @@ namespace Project.Admin_Pages
                 selected.Status = "Dismissed";
                 Database.Update<Services>(selected);
                 list_services.RemoveAt(e.RowIndex);
+                await Email.SendEmail(user, "zamitnuta", selected);
 
             }
             else if (column.Name == "acceptBTN")
@@ -101,6 +104,7 @@ namespace Project.Admin_Pages
                 selected.Status = "Accepted";
                 Database.Update<Services>(selected);
                 list_services.RemoveAt(e.RowIndex);
+                await Email.SendEmail(user, "schválena", selected);
             }
         }
     }

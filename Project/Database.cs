@@ -80,7 +80,6 @@ namespace Project
             }
         }
 
-
         public static async Task initDatabase()
         {
             using (SqliteConnection connection = new SqliteConnection(sqlConnection))
@@ -90,7 +89,7 @@ namespace Project
                 using (SqliteCommand command = connection.CreateCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = await File.ReadAllTextAsync("create.sql");
+                    command.CommandText = await File.ReadAllTextAsync("Assets/create.sql");
                     command.ExecuteNonQuery();
                 }
 

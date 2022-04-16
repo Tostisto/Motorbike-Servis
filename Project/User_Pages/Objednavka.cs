@@ -100,7 +100,7 @@ namespace Project.User_Pages
             gfx.DrawString("Service Type", font3, XBrushes.Black, tableRect3, XStringFormats.TopCenter);
             XRect tableRect4 = new XRect(150, 200, page.Width, page.Height);
             gfx.DrawString("Price", font3, XBrushes.Black, tableRect4, XStringFormats.TopCenter);
-            
+
             XPen pen = new XPen(XColors.Black, 1);
             gfx.DrawLine(pen, new XPoint(100, 215), new XPoint(page.Width - 100, 215));
 

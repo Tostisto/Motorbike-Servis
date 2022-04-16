@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Project;
+﻿using System.Text.RegularExpressions;
 
 namespace Project.User_Pages
 {
@@ -53,7 +43,7 @@ namespace Project.User_Pages
                 userSetting.Password = this.newPassword.Text;
                 Database.Update<User>(userSetting);
                 MessageBox.Show("Password updated.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+
             }
             else
             {

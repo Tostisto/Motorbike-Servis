@@ -29,17 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reservation));
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.calendar = new System.Windows.Forms.MonthCalendar();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.motorbikeBrand = new System.Windows.Forms.Label();
             this.motorbike_combobox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -82,12 +77,8 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Window;
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.calendar);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.motorbikeBrand);
             this.panel2.Controls.Add(this.motorbike_combobox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -99,7 +90,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(285, 496);
+            this.button1.Location = new System.Drawing.Point(285, 306);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 29);
             this.button1.TabIndex = 8;
@@ -107,31 +98,10 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(187, 340);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 150);
-            this.textBox2.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(70, 340);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Message for us:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(79, 121);
+            this.label2.Location = new System.Drawing.Point(79, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 20);
             this.label2.TabIndex = 5;
@@ -139,36 +109,19 @@
             // 
             // calendar
             // 
-            this.calendar.Location = new System.Drawing.Point(187, 121);
+            this.calendar.Location = new System.Drawing.Point(187, 87);
             this.calendar.Name = "calendar";
             this.calendar.TabIndex = 4;
             this.calendar.TitleForeColor = System.Drawing.SystemColors.ActiveBorder;
             // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(187, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 27);
-            this.textBox1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(147, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "City";
-            // 
             // motorbikeBrand
             // 
             this.motorbikeBrand.AutoSize = true;
-            this.motorbikeBrand.Location = new System.Drawing.Point(60, 50);
+            this.motorbikeBrand.Location = new System.Drawing.Point(100, 50);
             this.motorbikeBrand.Name = "motorbikeBrand";
-            this.motorbikeBrand.Size = new System.Drawing.Size(121, 20);
+            this.motorbikeBrand.Size = new System.Drawing.Size(81, 20);
             this.motorbikeBrand.TabIndex = 0;
-            this.motorbikeBrand.Text = "Motorbike Brand";
+            this.motorbikeBrand.Text = "Motorbike:";
             // 
             // motorbike_combobox
             // 
@@ -230,7 +183,6 @@
             this.motorbike_description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.motorbike_description.Size = new System.Drawing.Size(465, 333);
             this.motorbike_description.TabIndex = 2;
-            this.motorbike_description.Text = resources.GetString("motorbike_description.Text");
             // 
             // panel3
             // 
@@ -299,12 +251,8 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel2;
         private Button button1;
-        private TextBox textBox2;
-        private Label label3;
         private Label label2;
         private MonthCalendar calendar;
-        private TextBox textBox1;
-        private Label label1;
         private Label motorbikeBrand;
         private ComboBox motorbike_combobox;
         private Panel panel1;

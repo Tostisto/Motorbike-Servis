@@ -6,13 +6,15 @@ namespace Project.Admin_Pages
     {
         Services servis = new Services();
 
+        User user = new User();
+
         public servisDetail(Services servis)
         {
             this.servis = servis;
 
             InitializeComponent();
 
-            User user = Database.SpecificSelect<User>($"Id = {servis.UserID}").FirstOrDefault();
+            user = Database.SpecificSelect<User>($"Id = {servis.UserID}").FirstOrDefault();
 
             this.userName.Text = $"{user.FirstName} {user.LastName}";
             this.brand_textbox.Text = servis.Brand;
@@ -23,18 +25,22 @@ namespace Project.Admin_Pages
             this.description_textbox.Text = servis.Description;
         }
 
-        private void acceptBTN_Click(object sender, EventArgs e)
+        private async void acceptBTN_Click(object sender, EventArgs e)
         {
 
             this.servis.Status = "Accepted";
             Database.Update<Services>(this.servis);
+            await Email.SendEmail(user, "schválená", servis);
+
             this.Close();
         }
 
-        private void dismissBTN_Click(object sender, EventArgs e)
+        private async void dismissBTN_Click(object sender, EventArgs e)
         {
             this.servis.Status = "Dismissed";
             Database.Update<Services>(this.servis);
+            await Email.SendEmail(user, "zamitnuta", servis);
+
             this.Close();
         }
     }
