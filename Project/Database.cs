@@ -1,10 +1,5 @@
 ﻿using Microsoft.Data.Sqlite;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project
 {
@@ -21,12 +16,12 @@ namespace Project
 
             foreach (var property in obj.GetType().GetProperties())
             {
-                if(property.Name == "Id")
+                if (property.Name == "Id")
                 {
                     continue;
                 }
 
-                if(property.PropertyType == typeof(string))
+                if (property.PropertyType == typeof(string))
                 {
                     tableProperty.Add(property.Name);
                     tableValue.Add("'" + property.GetValue(obj).ToString() + "'");
@@ -41,9 +36,9 @@ namespace Project
             string prop = "", values = "";
 
             bool first = true;
-            foreach(string p in tableProperty)
+            foreach (string p in tableProperty)
             {
-                if(first)
+                if (first)
                 {
                     prop += p;
                     first = false;
@@ -71,11 +66,11 @@ namespace Project
 
             string insert = $"insert into {tableName} ({prop}) values({values})";
 
-            using(SqliteConnection conn = new SqliteConnection(sqlConnection))
+            using (SqliteConnection conn = new SqliteConnection(sqlConnection))
             {
                 conn.Open();
 
-                using(SqliteCommand cmd = new SqliteCommand())
+                using (SqliteCommand cmd = new SqliteCommand())
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = insert;
@@ -84,15 +79,15 @@ namespace Project
                 conn.Close();
             }
         }
-        
+
 
         public static async Task initDatabase()
         {
-            using(SqliteConnection connection = new SqliteConnection(sqlConnection))
+            using (SqliteConnection connection = new SqliteConnection(sqlConnection))
             {
                 connection.Open();
 
-                using(SqliteCommand command = connection.CreateCommand())
+                using (SqliteCommand command = connection.CreateCommand())
                 {
                     command.Connection = connection;
                     command.CommandText = await File.ReadAllTextAsync("create.sql");
@@ -110,10 +105,10 @@ namespace Project
             string tableName = typeof(T).Name;
 
             string select = $"select * from {tableName}";
-            
-            using(SqliteConnection conn = new SqliteConnection(sqlConnection))
+
+            using (SqliteConnection conn = new SqliteConnection(sqlConnection))
             {
-                using(SqliteCommand cmd = new SqliteCommand())
+                using (SqliteCommand cmd = new SqliteCommand())
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = select;

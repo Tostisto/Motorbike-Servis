@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Project.Class;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Project.Class;
 
 namespace Project.Admin_Pages
 {
@@ -76,7 +68,7 @@ namespace Project.Admin_Pages
                 UseColumnTextForButtonValue = true
             });
         }
-        
+
         private void servicesManage_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var column = this.servicesManage.Columns[e.ColumnIndex];
@@ -104,7 +96,7 @@ namespace Project.Admin_Pages
                 list_services.RemoveAt(e.RowIndex);
 
             }
-            else if(column.Name == "acceptBTN")
+            else if (column.Name == "acceptBTN")
             {
                 selected.Status = "Accepted";
                 Database.Update<Services>(selected);

@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Project.Class;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Project.Class;
 
 namespace Project.User_Pages
 {
@@ -18,13 +10,13 @@ namespace Project.User_Pages
         public List<DateTime> dates = new List<DateTime>();
 
         User user = new User();
-        
+
         public Reservation(User user)
         {
             this.user = user;
-            
+
             InitializeComponent();
-            
+
             motorbikes = Database.select<Motorbike>();
 
             this.motorbike_combobox.DataSource = motorbikes;
@@ -56,9 +48,9 @@ namespace Project.User_Pages
         {
             this.dates.RemoveAll(x => true);
             calendar.BoldedDates = dates.ToArray();
-            
+
             ComboBox senderComboBox = (ComboBox)sender;
-            
+
             var motorbike = senderComboBox.SelectedItem as Motorbike;
             UpdateCalendarDates(motorbike.Id);
 

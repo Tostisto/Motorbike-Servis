@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Project
+﻿namespace Project
 {
     public class Motorbike
     {
@@ -15,7 +9,7 @@ namespace Project
         public string? Image { get; set; }
 
         public Motorbike() { }
-        
+
         public Motorbike(string name, int price, string description, string? image)
         {
             Name = name;

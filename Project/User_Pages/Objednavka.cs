@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PdfSharpCore.Drawing;
+using PdfSharpCore.Pdf;
+using Project.Class;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Project.Class;
-
-using Syncfusion.Pdf;
-using Syncfusion.Pdf.Graphics;
-using System.Drawing;
-using Syncfusion.Pdf.Grid;
 
 namespace Project.User_Pages
 {
@@ -30,7 +20,7 @@ namespace Project.User_Pages
         public Objednavka(User user)
         {
             this.user = user;
-            
+
             InitializeComponent();
 
             user_orders = Database.SpecificSelect<Orders>($"UserID = {user.Id} and Status = 0");
@@ -74,7 +64,7 @@ namespace Project.User_Pages
                 DataPropertyName = nameof(Orders.Price)
             });
 
-             totalPrice = user_orders.Select(x => x.Price).Sum();
+            totalPrice = user_orders.Select(x => x.Price).Sum();
 
             this.total_price.Text = totalPrice.ToString();
         }
@@ -82,41 +72,59 @@ namespace Project.User_Pages
 
         public void GeneratePDF()
         {
-            using (PdfDocument document = new PdfDocument())
+            PdfDocument document = new PdfDocument();
+            document.Info.Title = "Created with PDFsharp";
+
+            PdfPage page = document.AddPage();
+
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+
+            XFont font = new XFont("Arial", 20, XFontStyle.Bold);
+            gfx.DrawString("Objednávka", font, XBrushes.Black, new XRect(0, 30, page.Width, page.Height), XStringFormats.TopCenter);
+
+            XFont font2 = new XFont("Arial", 12, XFontStyle.Regular);
+            gfx.DrawString($"Jmeno: {user.FirstName} {user.LastName}", font2, XBrushes.Black, new XRect(50, 100, page.Width, page.Height), XStringFormats.TopLeft);
+            gfx.DrawString($"Email: {user.Email}", font2, XBrushes.Black, new XRect(50, 120, page.Width, page.Height), XStringFormats.TopLeft);
+            gfx.DrawString($"Datum: {DateTime.Now}", font2, XBrushes.Black, new XRect(50, 140, page.Width, page.Height), XStringFormats.TopLeft);
+
+
+            XFont font3 = new XFont("Arial", 10, XFontStyle.Regular);
+
+            XRect tableRect = new XRect(-150, 200, page.Width, page.Height);
+            gfx.DrawString("Objednávka", font3, XBrushes.Black, tableRect, XStringFormats.TopCenter);
+            XRect tableRect2 = new XRect(-50, 200, page.Width, page.Height);
+            gfx.DrawString("Motorbike", font3, XBrushes.Black, tableRect2, XStringFormats.TopCenter);
+            XRect tableRect3 = new XRect(50, 200, page.Width, page.Height);
+            gfx.DrawString("Service Type", font3, XBrushes.Black, tableRect3, XStringFormats.TopCenter);
+            XRect tableRect4 = new XRect(150, 200, page.Width, page.Height);
+            gfx.DrawString("Price", font3, XBrushes.Black, tableRect4, XStringFormats.TopCenter);
+            
+            XPen pen = new XPen(XColors.Black, 1);
+            gfx.DrawLine(pen, new XPoint(100, 215), new XPoint(page.Width - 100, 215));
+
+            int i = 0;
+
+            foreach (Orders order in user_orders)
             {
-                PdfPage page = document.Pages.Add();
-                PdfGraphics graphics = page.Graphics;
+                XRect tableRect5 = new XRect(-150, 220 + i, page.Width, page.Height);
+                gfx.DrawString(order.Id.ToString(), font3, XBrushes.Black, tableRect5, XStringFormats.TopCenter);
 
-                PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 16);
-                graphics.DrawString("Objednavka", font, PdfBrushes.Black, new PointF(0, 20));
+                XRect tableRect6 = new XRect(-50, 220 + i, page.Width, page.Height);
+                gfx.DrawString(order.Product, font3, XBrushes.Black, tableRect6, XStringFormats.TopCenter);
 
+                XRect tableRect7 = new XRect(50, 220 + i, page.Width, page.Height);
+                gfx.DrawString(order.Service, font3, XBrushes.Black, tableRect7, XStringFormats.TopCenter);
 
-                PdfFont smallfont = new PdfStandardFont(PdfFontFamily.Helvetica, 10);
-                graphics.DrawString($"Even though using lorem ipsum often arouses curiosity due to its resemblance to classical Latin", smallfont, PdfBrushes.Black, new PointF(0, 40));
+                XRect tableRect8 = new XRect(150, 220 + i, page.Width, page.Height);
+                gfx.DrawString(order.Price.ToString(), font3, XBrushes.Black, tableRect8, XStringFormats.TopCenter);
 
-                graphics.DrawString($"Jmeno: {user.FirstName} {user.LastName}", smallfont, PdfBrushes.Black, new PointF(0, 60));
-                graphics.DrawString($"Email: {user.Email}", smallfont, PdfBrushes.Black, new PointF(0, 80));
-                graphics.DrawString($"Datum: {DateTime.Now}", smallfont, PdfBrushes.Black, new PointF(0, 100));
-
-                PdfGrid pdfGrid = new PdfGrid();
-                DataTable dataTable = new DataTable();
-                
-                dataTable.Columns.Add("ID");
-                dataTable.Columns.Add("Product");
-                dataTable.Columns.Add("Service");
-                dataTable.Columns.Add("Price");
-                
-                foreach(Orders or in user_orders)
-                {
-                    dataTable.Rows.Add(or.Id, or.Product, or.Service, or.Price + " Kč");
-                }
-
-
-                pdfGrid.DataSource = dataTable;
-                pdfGrid.Draw(page, new PointF(10, 140));
-
-                document.Save(filePath);
+                i += 20;
             }
+
+            XRect tableRect9 = new XRect(50, 260 + i, page.Width, page.Height);
+            gfx.DrawString($"Celková cena: {totalPrice}", font3, XBrushes.Black, tableRect9, XStringFormats.TopLeft);
+
+            document.Save(filePath);
         }
 
 

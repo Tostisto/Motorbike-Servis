@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Project
+﻿namespace Project
 {
     public partial class User_Window : Form
     {
         public User user = new User();
-        
+
         public User_Window(User loginUser)
         {
             user = loginUser;

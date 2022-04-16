@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Project.Class
+﻿namespace Project.Class
 {
     public class Orders
     {
@@ -16,7 +10,7 @@ namespace Project.Class
         public int Status { get; set; }
 
 
-        public Orders(){}
+        public Orders() { }
 
         public Orders(int userId, string product, string service, float price, int status)
         {

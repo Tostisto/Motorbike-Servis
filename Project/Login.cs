@@ -1,5 +1,3 @@
-using System.ComponentModel;
-
 namespace Project
 {
     public partial class Login : Form
@@ -40,7 +38,7 @@ namespace Project
 
             if (loginUser != null)
             {
-                if(loginUser.Role == "admin")
+                if (loginUser.Role == "admin")
                 {
                     this.Hide();
                     Admin_page admin = new Admin_page(loginUser);

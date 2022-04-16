@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Project.Class;
+﻿using Project.Class;
 
 namespace Project.Admin_Pages
 {
     public partial class servisDetail : Form
     {
         Services servis = new Services();
-        
+
         public servisDetail(Services servis)
         {
             this.servis = servis;

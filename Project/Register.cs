@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using System.ComponentModel;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Project
 {
@@ -86,7 +78,7 @@ namespace Project
                 Database.insert<User>(newUser);
 
                 DialogResult result = MessageBox.Show("Register Completed");
-                if(result == System.Windows.Forms.DialogResult.OK)
+                if (result == System.Windows.Forms.DialogResult.OK)
                 {
                     this.Close();
                 }
