@@ -70,7 +70,7 @@ namespace Project
                     this.registerFNameEntry.Text,
                     this.registerLNameEntry.Text,
                     this.registerEmailEntry.Text,
-                    this.registerEmailEntry.Text,
+                    this.registerPasswordEntry.Text,
                     DateOnly.FromDateTime(this.registerDateTimePicker.Value.Date).ToString(),
                     "user"
                     );
