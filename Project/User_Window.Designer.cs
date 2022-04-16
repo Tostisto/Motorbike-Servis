@@ -80,6 +80,7 @@
             // 
             this.userInfoName.AutoSize = true;
             this.userInfoName.BackColor = System.Drawing.SystemColors.Window;
+            this.userInfoName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userInfoName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userInfoName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.userInfoName.Location = new System.Drawing.Point(48, 0);
@@ -89,10 +90,12 @@
             this.userInfoName.TabIndex = 1;
             this.userInfoName.Text = "Jakub Czepiec";
             this.userInfoName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.userInfoName.Click += new System.EventHandler(this.userInfoName_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
@@ -100,6 +103,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(39, 43);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
