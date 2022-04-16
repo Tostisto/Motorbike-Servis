@@ -36,6 +36,10 @@ namespace Project
             User loginUser = new User();
             loginUser = Database.SpecificSelect<User>($"email = '{inputEmail}' and password = '{inputPassword}'").FirstOrDefault();
 
+            // Clean up the input
+            this.loginEmailEntry.Text = "";
+            this.loginPasswordEntry.Text = "";
+
             if (loginUser != null)
             {
                 if (loginUser.Role == "admin")

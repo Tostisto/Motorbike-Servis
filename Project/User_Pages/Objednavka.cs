@@ -28,10 +28,14 @@ namespace Project.User_Pages
             if (user_orders.Count == 0)
             {
                 this.invoiceBTN.Enabled = false;
+                this.total_price.Text = "All orders are paid";
             }
             else
             {
                 this.invoiceBTN.Enabled = true;
+                totalPrice = user_orders.Select(x => x.Price).Sum();
+
+                this.total_price.Text = totalPrice.ToString() + " Kč";
             }
 
             this.orders_datagrid.AutoGenerateColumns = false;
@@ -64,9 +68,7 @@ namespace Project.User_Pages
                 DataPropertyName = nameof(Orders.Price)
             });
 
-            totalPrice = user_orders.Select(x => x.Price).Sum();
 
-            this.total_price.Text = totalPrice.ToString();
         }
 
 
@@ -151,6 +153,7 @@ namespace Project.User_Pages
             Task.WaitAll(UpdateOrders());
 
             this.user_orders.Clear();
+            this.total_price.Text = "All orders are paid";
 
             MessageBox.Show("Thanks for your order!");
         }

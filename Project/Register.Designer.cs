@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.registerFName = new System.Windows.Forms.Label();
             this.registerLName = new System.Windows.Forms.Label();
             this.registerEmail = new System.Windows.Forms.Label();
@@ -171,6 +172,7 @@
             this.Controls.Add(this.registerEmail);
             this.Controls.Add(this.registerLName);
             this.Controls.Add(this.registerFName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Register";
             this.Text = "Register";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();

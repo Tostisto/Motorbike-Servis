@@ -186,6 +186,7 @@
             this.Controls.Add(this.container);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Admin_page";
             this.Text = "Admin_page";
             this.panel1.ResumeLayout(false);

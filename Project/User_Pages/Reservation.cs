@@ -44,6 +44,7 @@ namespace Project.User_Pages
             }
         }
 
+
         private void motorbike_combobox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.dates.RemoveAll(x => true);
@@ -107,6 +108,8 @@ namespace Project.User_Pages
 
             Orders order = new Orders(user.Id, selectedMotorbike.Name, "Reservation", price, 0);
             Database.insert<Orders>(order);
+
+            UpdateCalendarDates(selectedMotorbike.Id);
 
             MessageBox.Show("Reservation Successful", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

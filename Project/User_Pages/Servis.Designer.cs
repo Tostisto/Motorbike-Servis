@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.brand_textBox = new System.Windows.Forms.TextBox();
@@ -41,7 +42,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.spz_textbox = new System.Windows.Forms.TextBox();
             this.add_servis = new System.Windows.Forms.Button();
+            this.servirErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.year_input)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servirErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -74,6 +77,7 @@
             this.brand_textBox.Name = "brand_textBox";
             this.brand_textBox.Size = new System.Drawing.Size(191, 27);
             this.brand_textBox.TabIndex = 2;
+            this.brand_textBox.Validating += new System.ComponentModel.CancelEventHandler(this.brand_textBox_Validating);
             // 
             // model_textBox
             // 
@@ -83,6 +87,7 @@
             this.model_textBox.Name = "model_textBox";
             this.model_textBox.Size = new System.Drawing.Size(191, 27);
             this.model_textBox.TabIndex = 3;
+            this.model_textBox.Validating += new System.ComponentModel.CancelEventHandler(this.model_textBox_Validating);
             // 
             // message_textBox
             // 
@@ -94,6 +99,7 @@
             this.message_textBox.Name = "message_textBox";
             this.message_textBox.Size = new System.Drawing.Size(547, 167);
             this.message_textBox.TabIndex = 4;
+            this.message_textBox.Validating += new System.ComponentModel.CancelEventHandler(this.message_textBox_Validating);
             // 
             // label3
             // 
@@ -180,6 +186,7 @@
             this.spz_textbox.Name = "spz_textbox";
             this.spz_textbox.Size = new System.Drawing.Size(89, 27);
             this.spz_textbox.TabIndex = 12;
+            this.spz_textbox.Validating += new System.ComponentModel.CancelEventHandler(this.spz_textbox_Validating);
             // 
             // add_servis
             // 
@@ -191,6 +198,10 @@
             this.add_servis.Text = "Add request";
             this.add_servis.UseVisualStyleBackColor = true;
             this.add_servis.Click += new System.EventHandler(this.add_servis_Click);
+            // 
+            // servirErrorProvider
+            // 
+            this.servirErrorProvider.ContainerControl = this;
             // 
             // Servis
             // 
@@ -213,6 +224,7 @@
             this.Name = "Servis";
             this.Text = "Servis";
             ((System.ComponentModel.ISupportInitialize)(this.year_input)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servirErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,5 +245,6 @@
         private Label label6;
         private TextBox spz_textbox;
         private Button add_servis;
+        private ErrorProvider servirErrorProvider;
     }
 }

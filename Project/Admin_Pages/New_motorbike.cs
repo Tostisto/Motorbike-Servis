@@ -31,6 +31,11 @@ namespace Project.Admin_Pages
             Database.insert<Motorbike>(new_motorbike);
 
             MessageBox.Show("Motorbike added", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.admin_add_motorbike_name.Text = "";
+            this.admin_add_motorbike_price.Text = "";
+            this.admin_add_motorbike_description.Text = "";
+            this.image_link.Text = "";
         }
 
         private void admin_add_motorbike_price_Validating(object sender, CancelEventArgs e)
