@@ -77,10 +77,10 @@ namespace Project
 
                 Database.insert<User>(newUser);
 
-                var x = Email.RegisterEmail(newUser);
-                await x;
-
                 DialogResult result = MessageBox.Show("Register Completed");
+
+                await Email.RegisterEmail(newUser);
+
                 if (result == System.Windows.Forms.DialogResult.OK)
                 {
                     this.Close();

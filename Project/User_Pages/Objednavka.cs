@@ -130,7 +130,7 @@ namespace Project.User_Pages
         }
 
 
-        public async Task UpdateOrders()
+        public void UpdateOrders()
         {
             foreach (var order in user_orders)
             {
@@ -148,17 +148,20 @@ namespace Project.User_Pages
             save.ShowDialog();
             filePath = save.FileName;
 
-            GeneratePDF();
+            Thread thread = new Thread(GeneratePDF);
+            thread.Start();
 
-            Task.WaitAll(UpdateOrders());
+            Thread thread2 = new Thread(UpdateOrders);
+            thread2.Start();
 
+            thread.Join();
+            thread2.Join();
             this.user_orders.Clear();
             this.total_price.Text = "All orders are paid";
 
-            var x = Email.OrderEmail(user, totalPrice);
-            await x;
-
             MessageBox.Show("Thanks for your order!");
+
+            await Email.OrderEmail(user, totalPrice);
         }
     }
 }

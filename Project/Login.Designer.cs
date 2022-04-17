@@ -58,7 +58,7 @@
             // loginBTN
             // 
             this.loginBTN.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loginBTN.Location = new System.Drawing.Point(405, 233);
+            this.loginBTN.Location = new System.Drawing.Point(419, 224);
             this.loginBTN.Name = "loginBTN";
             this.loginBTN.Size = new System.Drawing.Size(94, 29);
             this.loginBTN.TabIndex = 11;
@@ -69,7 +69,7 @@
             // registerBTN
             // 
             this.registerBTN.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.registerBTN.Location = new System.Drawing.Point(305, 233);
+            this.registerBTN.Location = new System.Drawing.Point(314, 224);
             this.registerBTN.Name = "registerBTN";
             this.registerBTN.Size = new System.Drawing.Size(94, 29);
             this.registerBTN.TabIndex = 10;
@@ -80,24 +80,24 @@
             // loginPasswordEntry
             // 
             this.loginPasswordEntry.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loginPasswordEntry.Location = new System.Drawing.Point(361, 185);
+            this.loginPasswordEntry.Location = new System.Drawing.Point(314, 191);
             this.loginPasswordEntry.Name = "loginPasswordEntry";
-            this.loginPasswordEntry.Size = new System.Drawing.Size(150, 27);
+            this.loginPasswordEntry.Size = new System.Drawing.Size(199, 27);
             this.loginPasswordEntry.TabIndex = 9;
             // 
             // loginEmailEntry
             // 
             this.loginEmailEntry.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loginEmailEntry.Location = new System.Drawing.Point(361, 152);
+            this.loginEmailEntry.Location = new System.Drawing.Point(314, 158);
             this.loginEmailEntry.Name = "loginEmailEntry";
-            this.loginEmailEntry.Size = new System.Drawing.Size(150, 27);
+            this.loginEmailEntry.Size = new System.Drawing.Size(199, 27);
             this.loginEmailEntry.TabIndex = 8;
             // 
             // loginPasswordLabel
             // 
             this.loginPasswordLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginPasswordLabel.AutoSize = true;
-            this.loginPasswordLabel.Location = new System.Drawing.Point(287, 188);
+            this.loginPasswordLabel.Location = new System.Drawing.Point(240, 194);
             this.loginPasswordLabel.Name = "loginPasswordLabel";
             this.loginPasswordLabel.Size = new System.Drawing.Size(70, 20);
             this.loginPasswordLabel.TabIndex = 7;
@@ -107,7 +107,7 @@
             // 
             this.loginEmailLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginEmailLabel.AutoSize = true;
-            this.loginEmailLabel.Location = new System.Drawing.Point(305, 155);
+            this.loginEmailLabel.Location = new System.Drawing.Point(258, 161);
             this.loginEmailLabel.Name = "loginEmailLabel";
             this.loginEmailLabel.Size = new System.Drawing.Size(52, 20);
             this.loginEmailLabel.TabIndex = 6;
