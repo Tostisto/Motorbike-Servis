@@ -2,11 +2,17 @@
 using MailKit.Net.Smtp;
 using MimeKit;
 using Project.Class;
+using System.Configuration;
 
 namespace Project
 {
     public class Email
     {
+        public static string host = ConfigurationManager.AppSettings["host"];
+        public static int smtpport = int.Parse(ConfigurationManager.AppSettings["port"]);
+        public static string username = ConfigurationManager.AppSettings["username"];
+        public static string password = ConfigurationManager.AppSettings["password"];
+
         public static async Task ServisEmail(User user, string status, Services servis)
         {
             using MimeMessage msg = new MimeMessage();
@@ -30,8 +36,8 @@ namespace Project
 
             using SmtpClient client = new SmtpClient();
 
-            await client.ConnectAsync("smtp.seznam.cz", 465, true);
-            await client.AuthenticateAsync("motorbike.servis@email.cz", "abc1234");
+            await client.ConnectAsync(host, smtpport, true);
+            await client.AuthenticateAsync(username, password);
 
             await client.SendAsync(msg);
 
@@ -58,8 +64,8 @@ namespace Project
 
             using SmtpClient client = new SmtpClient();
 
-            await client.ConnectAsync("smtp.seznam.cz", 465, true);
-            await client.AuthenticateAsync("motorbike.servis@email.cz", "abc1234");
+            await client.ConnectAsync(host, smtpport, true);
+            await client.AuthenticateAsync(username, password);
 
             await client.SendAsync(msg);
 
@@ -87,8 +93,8 @@ namespace Project
 
             using SmtpClient client = new SmtpClient();
 
-            await client.ConnectAsync("smtp.seznam.cz", 465, true);
-            await client.AuthenticateAsync("motorbike.servis@email.cz", "abc1234");
+            await client.ConnectAsync(host, smtpport, true);
+            await client.AuthenticateAsync(username, password);
 
             await client.SendAsync(msg);
 

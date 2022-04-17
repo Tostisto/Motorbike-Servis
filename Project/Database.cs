@@ -1,11 +1,12 @@
 ﻿using Microsoft.Data.Sqlite;
 using System.ComponentModel;
+using System.Configuration;
 
 namespace Project
 {
     public class Database
     {
-        public static string sqlConnection = "Data Source=MotoServis.db";
+        public static string sqlConnection = ConfigurationManager.AppSettings["cs"];
 
         public static void insert<T>(T obj)
         {
