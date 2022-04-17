@@ -43,11 +43,13 @@
             this.registerEmailEntry = new System.Windows.Forms.TextBox();
             this.registerPasswordEntry = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // registerFName
             // 
+            this.registerFName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerFName.AutoSize = true;
             this.registerFName.Location = new System.Drawing.Point(244, 83);
             this.registerFName.Name = "registerFName";
@@ -57,6 +59,7 @@
             // 
             // registerLName
             // 
+            this.registerLName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerLName.AutoSize = true;
             this.registerLName.Location = new System.Drawing.Point(244, 116);
             this.registerLName.Name = "registerLName";
@@ -66,6 +69,7 @@
             // 
             // registerEmail
             // 
+            this.registerEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerEmail.AutoSize = true;
             this.registerEmail.Location = new System.Drawing.Point(271, 149);
             this.registerEmail.Name = "registerEmail";
@@ -75,6 +79,7 @@
             // 
             // registerPassword
             // 
+            this.registerPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerPassword.AutoSize = true;
             this.registerPassword.Location = new System.Drawing.Point(253, 186);
             this.registerPassword.Name = "registerPassword";
@@ -84,6 +89,7 @@
             // 
             // registerDateTimePicker
             // 
+            this.registerDateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.registerDateTimePicker.Location = new System.Drawing.Point(329, 212);
             this.registerDateTimePicker.Name = "registerDateTimePicker";
@@ -92,6 +98,7 @@
             // 
             // registerDate
             // 
+            this.registerDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerDate.AutoSize = true;
             this.registerDate.Location = new System.Drawing.Point(229, 217);
             this.registerDate.Name = "registerDate";
@@ -101,17 +108,20 @@
             // 
             // confirm
             // 
+            this.confirm.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.confirm.AutoSize = true;
             this.confirm.Location = new System.Drawing.Point(429, 262);
             this.confirm.Name = "confirm";
-            this.confirm.Size = new System.Drawing.Size(98, 24);
+            this.confirm.Size = new System.Drawing.Size(90, 24);
             this.confirm.TabIndex = 6;
-            this.confirm.Text = "Souhlas ....";
+            this.confirm.Text = "I agree ...";
+            this.toolTip1.SetToolTip(this.confirm, "I agree to the Our Terms and Conditions.");
             this.confirm.UseVisualStyleBackColor = true;
             this.confirm.CheckStateChanged += new System.EventHandler(this.confirmChange);
             // 
             // registerBTN
             // 
+            this.registerBTN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerBTN.Enabled = false;
             this.registerBTN.Location = new System.Drawing.Point(329, 259);
             this.registerBTN.Name = "registerBTN";
@@ -123,6 +133,7 @@
             // 
             // registerFNameEntry
             // 
+            this.registerFNameEntry.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerFNameEntry.Location = new System.Drawing.Point(329, 80);
             this.registerFNameEntry.Name = "registerFNameEntry";
             this.registerFNameEntry.Size = new System.Drawing.Size(198, 27);
@@ -130,6 +141,7 @@
             // 
             // registerLNameEntry
             // 
+            this.registerLNameEntry.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerLNameEntry.Location = new System.Drawing.Point(329, 113);
             this.registerLNameEntry.Name = "registerLNameEntry";
             this.registerLNameEntry.Size = new System.Drawing.Size(198, 27);
@@ -137,6 +149,7 @@
             // 
             // registerEmailEntry
             // 
+            this.registerEmailEntry.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerEmailEntry.Location = new System.Drawing.Point(329, 146);
             this.registerEmailEntry.Name = "registerEmailEntry";
             this.registerEmailEntry.Size = new System.Drawing.Size(198, 27);
@@ -145,6 +158,7 @@
             // 
             // registerPasswordEntry
             // 
+            this.registerPasswordEntry.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerPasswordEntry.Location = new System.Drawing.Point(329, 179);
             this.registerPasswordEntry.Name = "registerPasswordEntry";
             this.registerPasswordEntry.Size = new System.Drawing.Size(198, 27);
@@ -196,5 +210,6 @@
         private TextBox registerEmailEntry;
         private TextBox registerPasswordEntry;
         private ErrorProvider errorProvider;
+        private ToolTip toolTip1;
     }
 }
