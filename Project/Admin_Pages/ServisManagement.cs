@@ -96,7 +96,7 @@ namespace Project.Admin_Pages
                 selected.Status = "Dismissed";
                 Database.Update<Services>(selected);
                 list_services.RemoveAt(e.RowIndex);
-                await Email.SendEmail(user, "zamitnuta", selected);
+                await Email.ServisEmail(user, "zamitnuta", selected);
 
             }
             else if (column.Name == "acceptBTN")
@@ -104,7 +104,7 @@ namespace Project.Admin_Pages
                 selected.Status = "Accepted";
                 Database.Update<Services>(selected);
                 list_services.RemoveAt(e.RowIndex);
-                await Email.SendEmail(user, "schválena", selected);
+                await Email.ServisEmail(user, "schválena", selected);
             }
         }
     }

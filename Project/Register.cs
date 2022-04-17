@@ -61,7 +61,7 @@ namespace Project
             }
         }
 
-        private void registerBTN_Click(object sender, EventArgs e)
+        private async void registerBTN_Click(object sender, EventArgs e)
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
@@ -76,6 +76,9 @@ namespace Project
                     );
 
                 Database.insert<User>(newUser);
+
+                var x = Email.RegisterEmail(newUser);
+                await x;
 
                 DialogResult result = MessageBox.Show("Register Completed");
                 if (result == System.Windows.Forms.DialogResult.OK)

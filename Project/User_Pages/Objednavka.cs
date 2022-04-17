@@ -140,7 +140,7 @@ namespace Project.User_Pages
             }
         }
 
-        private void invoiceBTN_Click(object sender, EventArgs e)
+        private async void invoiceBTN_Click(object sender, EventArgs e)
         {
             SaveFileDialog save = new SaveFileDialog();
             save.Title = "Save an Image File";
@@ -154,6 +154,9 @@ namespace Project.User_Pages
 
             this.user_orders.Clear();
             this.total_price.Text = "All orders are paid";
+
+            var x = Email.OrderEmail(user, totalPrice);
+            await x;
 
             MessageBox.Show("Thanks for your order!");
         }
