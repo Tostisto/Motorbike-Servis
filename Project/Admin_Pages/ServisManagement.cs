@@ -97,7 +97,6 @@ namespace Project.Admin_Pages
                 Database.Update<Services>(selected);
                 list_services.RemoveAt(e.RowIndex);
                 await Email.ServisEmail(user, "zamitnuta", selected);
-
             }
             else if (column.Name == "acceptBTN")
             {
