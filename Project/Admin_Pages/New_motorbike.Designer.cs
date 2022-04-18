@@ -69,7 +69,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.BackColor = System.Drawing.SystemColors.Menu;
             this.panel1.Controls.Add(this.add_motorbike_BTN);
             this.panel1.Controls.Add(this.test_link_button);
             this.panel1.Controls.Add(this.label5);
@@ -115,7 +115,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.Window;
+            this.label5.BackColor = System.Drawing.SystemColors.Menu;
             this.label5.Location = new System.Drawing.Point(48, 325);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 20);
@@ -127,7 +127,6 @@
             this.image_link.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.image_link.BackColor = System.Drawing.SystemColors.Window;
-            this.image_link.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.image_link.Location = new System.Drawing.Point(135, 322);
             this.image_link.Name = "image_link";
             this.image_link.Size = new System.Drawing.Size(205, 27);
@@ -139,7 +138,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.admin_add_motorbike_description.BackColor = System.Drawing.SystemColors.Window;
-            this.admin_add_motorbike_description.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.admin_add_motorbike_description.Location = new System.Drawing.Point(135, 108);
             this.admin_add_motorbike_description.Multiline = true;
             this.admin_add_motorbike_description.Name = "admin_add_motorbike_description";
@@ -149,7 +147,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.Window;
+            this.label4.BackColor = System.Drawing.SystemColors.Menu;
             this.label4.Location = new System.Drawing.Point(44, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 20);
@@ -159,7 +157,7 @@
             // currency
             // 
             this.currency.AutoSize = true;
-            this.currency.BackColor = System.Drawing.SystemColors.Window;
+            this.currency.BackColor = System.Drawing.SystemColors.Menu;
             this.currency.Location = new System.Drawing.Point(315, 78);
             this.currency.Name = "currency";
             this.currency.Size = new System.Drawing.Size(25, 20);
@@ -169,7 +167,6 @@
             // admin_add_motorbike_price
             // 
             this.admin_add_motorbike_price.BackColor = System.Drawing.SystemColors.Window;
-            this.admin_add_motorbike_price.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.admin_add_motorbike_price.Location = new System.Drawing.Point(135, 75);
             this.admin_add_motorbike_price.Name = "admin_add_motorbike_price";
             this.admin_add_motorbike_price.Size = new System.Drawing.Size(180, 27);
@@ -179,7 +176,6 @@
             // admin_add_motorbike_name
             // 
             this.admin_add_motorbike_name.BackColor = System.Drawing.SystemColors.Window;
-            this.admin_add_motorbike_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.admin_add_motorbike_name.Location = new System.Drawing.Point(135, 39);
             this.admin_add_motorbike_name.Name = "admin_add_motorbike_name";
             this.admin_add_motorbike_name.Size = new System.Drawing.Size(180, 27);
@@ -188,7 +184,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Window;
+            this.label2.BackColor = System.Drawing.SystemColors.Menu;
             this.label2.Location = new System.Drawing.Point(88, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 20);
@@ -198,7 +194,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Window;
+            this.label1.BackColor = System.Drawing.SystemColors.Menu;
             this.label1.Location = new System.Drawing.Point(80, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 20);

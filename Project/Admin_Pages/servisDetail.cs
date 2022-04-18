@@ -30,9 +30,9 @@ namespace Project.Admin_Pages
             this.servis.Status = "Accepted";
             Database.Update<Services>(this.servis);
 
-            await Email.ServisEmail(user, "schválená", servis);
-
             this.Close();
+
+            await Email.ServisEmail(user, "schválená", servis);
         }
 
         private async void dismissBTN_Click(object sender, EventArgs e)
@@ -40,9 +40,9 @@ namespace Project.Admin_Pages
             this.servis.Status = "Dismissed";
             Database.Update<Services>(this.servis);
             
-            await Email.ServisEmail(user, "zamitnuta", servis);
-
             this.Close();
+        
+            await Email.ServisEmail(user, "zamitnuta", servis);
         }
     }
 }

@@ -42,7 +42,7 @@
             // loginPanel
             // 
             this.loginPanel.AutoScroll = true;
-            this.loginPanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.loginPanel.BackColor = System.Drawing.SystemColors.Menu;
             this.loginPanel.Controls.Add(this.loginBTN);
             this.loginPanel.Controls.Add(this.registerBTN);
             this.loginPanel.Controls.Add(this.loginPasswordEntry);

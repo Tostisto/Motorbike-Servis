@@ -152,8 +152,6 @@ namespace Project
             int objectID = (int)obj.GetType().GetProperty("Id").GetValue(obj);
             string tableName = obj.GetType().Name;
 
-            string delete = $"delete from {tableName} where Id = {objectID}";
-
             using (SqliteConnection conn = new SqliteConnection(sqlConnection))
             {
                 conn.Open();
@@ -161,7 +159,8 @@ namespace Project
                 using (SqliteCommand cmd = new SqliteCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = delete;
+                    cmd.CommandText = $"delete from {tableName} where Id = $id";
+                    cmd.Parameters.AddWithValue("$id", objectID);
                     cmd.ExecuteNonQuery();
                 }
                 conn.Close();
@@ -179,39 +178,19 @@ namespace Project
                     continue;
                 }
 
-                if (property.PropertyType == typeof(string))
+                using (SqliteConnection conn = new SqliteConnection(sqlConnection))
                 {
-                    string update = $"update {obj.GetType().Name} set {property.Name} = '{property.GetValue(obj)}' where Id = {objectID}";
+                    conn.Open();
 
-                    using (SqliteConnection conn = new SqliteConnection(sqlConnection))
+                    using (SqliteCommand cmd = new SqliteCommand())
                     {
-                        conn.Open();
-
-                        using (SqliteCommand cmd = new SqliteCommand())
-                        {
-                            cmd.Connection = conn;
-                            cmd.CommandText = update;
-                            cmd.ExecuteNonQuery();
-                        }
-                        conn.Close();
+                        cmd.Connection = conn;
+                        cmd.CommandText = $"update {obj.GetType().Name} set {property.Name} = $value where Id = $id";
+                        cmd.Parameters.AddWithValue("$value", property.GetValue(obj));
+                        cmd.Parameters.AddWithValue("$id", objectID);
+                        cmd.ExecuteNonQuery();
                     }
-                }
-                else
-                {
-                    string update = $"update {obj.GetType().Name} set {property.Name} = {property.GetValue(obj).ToString()} where Id = {objectID}";
-
-                    using (SqliteConnection conn = new SqliteConnection(sqlConnection))
-                    {
-                        conn.Open();
-
-                        using (SqliteCommand cmd = new SqliteCommand())
-                        {
-                            cmd.Connection = conn;
-                            cmd.CommandText = update;
-                            cmd.ExecuteNonQuery();
-                        }
-                        conn.Close();
-                    }
+                    conn.Close();
                 }
             }
         }

@@ -32,6 +32,7 @@
             objednavka.Dock = DockStyle.Fill;
             objednavka.Show();
             this.indicator.Location = new Point(this.objednavka_btn.Location.X, this.objednavka_btn.Location.Y);
+            this.headerText.Text = "Objednávka";
 
         }
 
@@ -45,6 +46,7 @@
             reservation.Dock = DockStyle.Fill;
             reservation.Show();
             this.indicator.Location = new Point(this.reservation_button.Location.X, this.reservation_button.Location.Y);
+            this.headerText.Text = "Rezervace";
         }
 
         private void servis_button_Click(object sender, EventArgs e)
@@ -57,6 +59,7 @@
             servis.Dock = DockStyle.Fill;
             servis.Show();
             this.indicator.Location = new Point(this.servis_button.Location.X, this.servis_button.Location.Y);
+            this.headerText.Text = "Servis";
         }
 
         private void logout_button_Click(object sender, EventArgs e)
@@ -73,6 +76,7 @@
             userSetting.FormBorderStyle = FormBorderStyle.None;
             userSetting.Dock = DockStyle.Fill;
             userSetting.Show();
+            this.headerText.Text = "Nastavení";
         }
 
         private void userInfoName_Click(object sender, EventArgs e)
@@ -84,6 +88,7 @@
             userSetting.FormBorderStyle = FormBorderStyle.None;
             userSetting.Dock = DockStyle.Fill;
             userSetting.Show();
+            this.headerText.Text = "Nastavení";
         }
     }
 }

@@ -154,10 +154,11 @@ namespace Project.User_Pages
             Thread thread2 = new Thread(UpdateOrders);
             thread2.Start();
 
+            this.total_price.Text = "All orders are paid";
+
             thread.Join();
             thread2.Join();
             this.user_orders.Clear();
-            this.total_price.Text = "All orders are paid";
 
             MessageBox.Show("Thanks for your order!");
 

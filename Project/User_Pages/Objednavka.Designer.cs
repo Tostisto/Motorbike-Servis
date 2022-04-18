@@ -58,7 +58,7 @@
             // 
             // bottom_panel
             // 
-            this.bottom_panel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bottom_panel.BackColor = System.Drawing.SystemColors.Window;
             this.bottom_panel.Controls.Add(this.invoiceBTN);
             this.bottom_panel.Controls.Add(this.total_price);
             this.bottom_panel.Controls.Add(this.label2);

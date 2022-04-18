@@ -57,7 +57,7 @@ namespace Project
             {
                 e.Cancel = true;
                 this.registerEmailEntry.Focus();
-                this.errorProvider.SetError(this.registerPasswordEntry, "The password must have at least 6 characters, of which at least one number and one uppercase character");
+                this.errorProvider.SetError(this.registerPasswordEntry, "The password must have at least 6 characters.");
             }
         }
 
@@ -79,11 +79,11 @@ namespace Project
 
                 DialogResult result = MessageBox.Show("Register Completed");
 
-                await Email.RegisterEmail(newUser);
 
                 if (result == System.Windows.Forms.DialogResult.OK)
                 {
                     this.Close();
+                    await Email.RegisterEmail(newUser);
                 }
             }
         }
