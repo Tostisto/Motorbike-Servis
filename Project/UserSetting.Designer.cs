@@ -55,19 +55,19 @@
             // 
             this.newEmail.Location = new System.Drawing.Point(130, 42);
             this.newEmail.Name = "newEmail";
-            this.newEmail.Size = new System.Drawing.Size(125, 27);
+            this.newEmail.Size = new System.Drawing.Size(176, 27);
             this.newEmail.TabIndex = 2;
             // 
             // newPassword
             // 
             this.newPassword.Location = new System.Drawing.Point(130, 74);
             this.newPassword.Name = "newPassword";
-            this.newPassword.Size = new System.Drawing.Size(125, 27);
+            this.newPassword.Size = new System.Drawing.Size(176, 27);
             this.newPassword.TabIndex = 3;
             // 
             // update_email
             // 
-            this.update_email.Location = new System.Drawing.Point(261, 40);
+            this.update_email.Location = new System.Drawing.Point(312, 40);
             this.update_email.Name = "update_email";
             this.update_email.Size = new System.Drawing.Size(94, 29);
             this.update_email.TabIndex = 4;
@@ -79,7 +79,7 @@
             // 
             this.oldPassword.Location = new System.Drawing.Point(130, 41);
             this.oldPassword.Name = "oldPassword";
-            this.oldPassword.Size = new System.Drawing.Size(125, 27);
+            this.oldPassword.Size = new System.Drawing.Size(176, 27);
             this.oldPassword.TabIndex = 5;
             // 
             // groupBox1
@@ -99,7 +99,7 @@
             // 
             // update_password
             // 
-            this.update_password.Location = new System.Drawing.Point(261, 74);
+            this.update_password.Location = new System.Drawing.Point(312, 74);
             this.update_password.Name = "update_password";
             this.update_password.Size = new System.Drawing.Size(94, 29);
             this.update_password.TabIndex = 8;

@@ -2,9 +2,13 @@
 {
     public partial class Admin_page : Form
     {
+        User user = new User();
+        
         public Admin_page(User user)
         {
             InitializeComponent();
+
+            this.user = user;
 
             this.userInfoName.Text = user.FirstName + " " + user.LastName;
 
@@ -44,6 +48,28 @@
         private void logout_button_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            container.Controls.Clear();
+            User_Pages.UserSetting userSetting = new User_Pages.UserSetting(user);
+            userSetting.TopLevel = false;
+            container.Controls.Add(userSetting);
+            userSetting.FormBorderStyle = FormBorderStyle.None;
+            userSetting.Dock = DockStyle.Fill;
+            userSetting.Show();
+        }
+
+        private void userInfoName_Click(object sender, EventArgs e)
+        {
+            container.Controls.Clear();
+            User_Pages.UserSetting userSetting = new User_Pages.UserSetting(user);
+            userSetting.TopLevel = false;
+            container.Controls.Add(userSetting);
+            userSetting.FormBorderStyle = FormBorderStyle.None;
+            userSetting.Dock = DockStyle.Fill;
+            userSetting.Show();
         }
     }
 }
