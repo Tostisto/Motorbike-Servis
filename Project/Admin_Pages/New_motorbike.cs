@@ -24,11 +24,11 @@ namespace Project.Admin_Pages
             }
         }
 
-        private void add_motorbike_BTN_Click(object sender, EventArgs e)
+        private async void add_motorbike_BTN_Click(object sender, EventArgs e)
         {
             Motorbike new_motorbike = new Motorbike(this.admin_add_motorbike_name.Text, int.Parse(this.admin_add_motorbike_price.Text), this.admin_add_motorbike_description.Text, image_link.Text);
 
-            Database.insert<Motorbike>(new_motorbike);
+           await Database.insert<Motorbike>(new_motorbike);
 
             MessageBox.Show("Motorbike added", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

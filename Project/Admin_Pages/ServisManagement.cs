@@ -94,14 +94,14 @@ namespace Project.Admin_Pages
             else if (column.Name == "dismissBTN")
             {
                 selected.Status = "Dismissed";
-                Database.Update<Services>(selected);
+                await Database.Update<Services>(selected);
                 list_services.RemoveAt(e.RowIndex);
                 await Email.ServisEmail(user, "zamitnuta", selected);
             }
             else if (column.Name == "acceptBTN")
             {
                 selected.Status = "Accepted";
-                Database.Update<Services>(selected);
+                await Database.Update<Services>(selected);
                 list_services.RemoveAt(e.RowIndex);
                 await Email.ServisEmail(user, "schválena", selected);
             }

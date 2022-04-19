@@ -72,7 +72,7 @@ namespace Project.User_Pages
             return days * Price;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             Motorbike selectedMotorbike = new Motorbike();
 
@@ -104,10 +104,10 @@ namespace Project.User_Pages
             }
 
             Reservations newReservation = new Reservations(user.Id, selectedMotorbike.Id, this.calendar.SelectionStart.ToString(), this.calendar.SelectionEnd.ToString(), "Reserved");
-            Database.insert<Reservations>(newReservation);
+            await Database.insert<Reservations>(newReservation);
 
             Orders order = new Orders(user.Id, selectedMotorbike.Name, "Reservation", price, 0);
-            Database.insert<Orders>(order);
+            await Database.insert<Orders>(order);
 
             UpdateCalendarDates(selectedMotorbike.Id);
 

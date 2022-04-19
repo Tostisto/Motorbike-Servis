@@ -130,13 +130,15 @@ namespace Project.User_Pages
         }
 
 
-        public void UpdateOrders()
+        public async void UpdateOrders()
         {
             foreach (var order in user_orders)
             {
                 order.Status = 1;
-                Thread thread = new Thread(() => Database.Update<Orders>(order));
-                thread.Start();
+                //Thread thread = new Thread(() => await Database.Update<Orders>(order));
+                //thread.Start();
+
+                await Database.Update<Orders>(order);
             }
         }
 

@@ -8,7 +8,7 @@ namespace Project
     {
         public static string sqlConnection = ConfigurationManager.AppSettings["cs"];
 
-        public static void insert<T>(T obj)
+        public static async Task insert<T>(T obj)
         {
             string tableName = obj.GetType().Name;
 
@@ -64,8 +64,8 @@ namespace Project
                 }
             }
 
-
             string insert = $"insert into {tableName} ({prop}) values({values})";
+
 
             using (SqliteConnection conn = new SqliteConnection(sqlConnection))
             {
@@ -75,7 +75,7 @@ namespace Project
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = insert;
-                    cmd.ExecuteNonQuery();
+                    await cmd.ExecuteNonQueryAsync();
                 }
                 conn.Close();
             }
@@ -143,31 +143,11 @@ namespace Project
                     conn.Close();
                 }
             }
-
             return list;
         }
 
-        public static void Delete<T>(T obj)
-        {
-            int objectID = (int)obj.GetType().GetProperty("Id").GetValue(obj);
-            string tableName = obj.GetType().Name;
-
-            using (SqliteConnection conn = new SqliteConnection(sqlConnection))
-            {
-                conn.Open();
-
-                using (SqliteCommand cmd = new SqliteCommand())
-                {
-                    cmd.Connection = conn;
-                    cmd.CommandText = $"delete from {tableName} where Id = $id";
-                    cmd.Parameters.AddWithValue("$id", objectID);
-                    cmd.ExecuteNonQuery();
-                }
-                conn.Close();
-            }
-        }
-
-        public static void Update<T>(T obj)
+        
+        public static async Task Update<T>(T obj)
         {
             int objectID = (int)obj.GetType().GetProperty("Id").GetValue(obj);
 
@@ -188,7 +168,7 @@ namespace Project
                         cmd.CommandText = $"update {obj.GetType().Name} set {property.Name} = $value where Id = $id";
                         cmd.Parameters.AddWithValue("$value", property.GetValue(obj));
                         cmd.Parameters.AddWithValue("$id", objectID);
-                        cmd.ExecuteNonQuery();
+                        await cmd.ExecuteNonQueryAsync();
                     }
                     conn.Close();
                 }

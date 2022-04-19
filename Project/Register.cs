@@ -75,7 +75,7 @@ namespace Project
                     "user"
                     );
 
-                Database.insert<User>(newUser);
+                await Database.insert<User>(newUser);
 
                 DialogResult result = MessageBox.Show("Register Completed");
 
