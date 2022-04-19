@@ -28,9 +28,9 @@ namespace Project
 
         private void registerEmailEntry_Validating(object sender, CancelEventArgs e)
         {
-            Regex regexExpr = new Regex(@"^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,6}$");
+            Regex regex = new Regex(@"^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,6}$");
 
-            if (regexExpr.IsMatch(this.registerEmailEntry.Text))
+            if (regex.IsMatch(this.registerEmailEntry.Text))
             {
                 e.Cancel = false;
                 errorProvider.SetError(this.registerEmailEntry, "");
@@ -46,9 +46,11 @@ namespace Project
 
         private void registerPasswordEntry_Validating(object sender, CancelEventArgs e)
         {
-            Regex regexExpr = new Regex(@"^[a-zA-Z0-9]{6,10}");
+            //Regex regexExpr = new Regex(@"^[a-zA-Z0-9]{6,10}");
 
-            if (regexExpr.IsMatch(this.registerPasswordEntry.Text))
+            Regex regex = new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$");
+
+            if (regex.IsMatch(this.registerPasswordEntry.Text))
             {
                 e.Cancel = false;
                 errorProvider.SetError(this.registerPasswordEntry, "");
@@ -57,7 +59,7 @@ namespace Project
             {
                 e.Cancel = true;
                 this.registerEmailEntry.Focus();
-                this.errorProvider.SetError(this.registerPasswordEntry, "The password must have at least 6 characters.");
+                this.errorProvider.SetError(this.registerPasswordEntry, "The password is not valid. Your password must contain at least 6 characters with at least one uppercase letter, number and special character.");
             }
         }
 

@@ -20,9 +20,9 @@ namespace Project.User_Pages
         private async void update_email_Click(object sender, EventArgs e)
         {
 
-            Regex regexExpr = new Regex(@"^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,6}$");
+            Regex regex = new Regex(@"^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,6}$");
 
-            if (regexExpr.IsMatch(this.newEmail.Text))
+            if (regex.IsMatch(this.newEmail.Text))
             {
                 userSetting.Email = newEmail.Text;
                 await Database.Update<User>(userSetting);
@@ -36,9 +36,9 @@ namespace Project.User_Pages
 
         private async void update_password_Click(object sender, EventArgs e)
         {
-            Regex regexExpr = new Regex(@"^[a-zA-Z0-9]{6,10}");
+            Regex regex = new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$");
 
-            if (this.oldPassword.Text == userSetting.Password && regexExpr.IsMatch(this.newPassword.Text))
+            if (this.oldPassword.Text == userSetting.Password && regex.IsMatch(this.newPassword.Text))
             {
                 userSetting.Password = this.newPassword.Text;
                 await Database.Update<User>(userSetting);
@@ -47,7 +47,7 @@ namespace Project.User_Pages
             }
             else
             {
-                MessageBox.Show("Fuild update Password. Password. You may have entered the wrong old password or the new password is not valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fuild update Password. Password. You may have entered the wrong old password or the new password is not valid. Your password must contain at least 6 characters with at least one uppercase letter, number and special character.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
