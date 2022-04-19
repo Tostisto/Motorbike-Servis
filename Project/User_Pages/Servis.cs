@@ -15,6 +15,12 @@ namespace Project.User_Pages
 
         private async void add_servis_Click(object sender, EventArgs e)
         {
+            if(this.brand_textBox.Text == "" || this.model_textBox.Text == "" || this.spz_textbox.Text == "" || this.place.SelectedItem == null || this.message_textBox.Text == "")
+            {
+                MessageBox.Show("Please enter all information.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             try
             {
                 Services newServis = new Services(user.Id, brand_textBox.Text, model_textBox.Text, (int)year_input.Value, spz_textbox.Text, place.SelectedItem.ToString(), message_textBox.Text, "new");

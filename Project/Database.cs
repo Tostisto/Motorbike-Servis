@@ -34,6 +34,21 @@ namespace Project
                 }
             }
 
+            //string prop = "", values = "";
+
+            //foreach (string p in tableProperty)
+            //{
+            //    prop += String.Format("{0}{1}", tableProperty.First() == p ? "" : ", ", p);
+            //}
+
+            //foreach (string v in tableValue)
+            //{
+            //    values += String.Format("{0}{1}", tableValue.First() == v ? "" : ", ", v);
+            //}
+
+            //string insert = $"insert into {tableName} ({prop}) values({values})";
+
+
             string prop = "", values = "";
 
             bool first = true;

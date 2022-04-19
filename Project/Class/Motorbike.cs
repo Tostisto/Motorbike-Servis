@@ -18,7 +18,7 @@
             Image = image;
         }
 
-        public Motorbike(int Id, string Name, int Price, string description, string image)
+        public Motorbike(int Id, string Name, int Price, string description, string? image)
         {
             this.Id = Id;
             this.Name = Name;

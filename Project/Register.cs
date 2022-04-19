@@ -63,6 +63,13 @@ namespace Project
 
         private async void registerBTN_Click(object sender, EventArgs e)
         {
+            
+            if(this.registerFNameEntry.Text == "" || this.registerLNameEntry.Text == "" || this.registerEmailEntry.Text == "" || this.registerPasswordEntry.Text == "")
+            {
+                MessageBox.Show("Please enter all information.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
                 User newUser = new User(

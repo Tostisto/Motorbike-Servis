@@ -39,16 +39,17 @@
             this.admin_add_motorbike_description = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.currency = new System.Windows.Forms.Label();
-            this.admin_add_motorbike_price = new System.Windows.Forms.TextBox();
             this.admin_add_motorbike_name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.new_motorbike_image = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.admin_add_motorbike_price = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.new_motorbike_image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admin_add_motorbike_price)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -70,6 +71,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel1.Controls.Add(this.admin_add_motorbike_price);
             this.panel1.Controls.Add(this.add_motorbike_BTN);
             this.panel1.Controls.Add(this.test_link_button);
             this.panel1.Controls.Add(this.label5);
@@ -77,7 +79,6 @@
             this.panel1.Controls.Add(this.admin_add_motorbike_description);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.currency);
-            this.panel1.Controls.Add(this.admin_add_motorbike_price);
             this.panel1.Controls.Add(this.admin_add_motorbike_name);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -164,15 +165,6 @@
             this.currency.TabIndex = 15;
             this.currency.Text = "Kč";
             // 
-            // admin_add_motorbike_price
-            // 
-            this.admin_add_motorbike_price.BackColor = System.Drawing.SystemColors.Window;
-            this.admin_add_motorbike_price.Location = new System.Drawing.Point(135, 75);
-            this.admin_add_motorbike_price.Name = "admin_add_motorbike_price";
-            this.admin_add_motorbike_price.Size = new System.Drawing.Size(180, 27);
-            this.admin_add_motorbike_price.TabIndex = 14;
-            this.admin_add_motorbike_price.Validating += new System.ComponentModel.CancelEventHandler(this.admin_add_motorbike_price_Validating);
-            // 
             // admin_add_motorbike_name
             // 
             this.admin_add_motorbike_name.BackColor = System.Drawing.SystemColors.Window;
@@ -218,6 +210,13 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // admin_add_motorbike_price
+            // 
+            this.admin_add_motorbike_price.Location = new System.Drawing.Point(135, 72);
+            this.admin_add_motorbike_price.Name = "admin_add_motorbike_price";
+            this.admin_add_motorbike_price.Size = new System.Drawing.Size(180, 27);
+            this.admin_add_motorbike_price.TabIndex = 22;
+            // 
             // New_motorbike
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -231,6 +230,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.new_motorbike_image)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admin_add_motorbike_price)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,12 +246,12 @@
         private TextBox admin_add_motorbike_description;
         private Label label4;
         private Label label3;
-        private TextBox admin_add_motorbike_price;
         private TextBox admin_add_motorbike_name;
         private Label label2;
         private Label label1;
         private PictureBox new_motorbike_image;
         private ErrorProvider errorProvider1;
         private Label currency;
+        private NumericUpDown admin_add_motorbike_price;
     }
 }

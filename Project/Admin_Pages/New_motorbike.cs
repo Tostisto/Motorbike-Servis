@@ -26,12 +26,18 @@ namespace Project.Admin_Pages
 
         private async void add_motorbike_BTN_Click(object sender, EventArgs e)
         {
-            Motorbike new_motorbike = new Motorbike(this.admin_add_motorbike_name.Text, int.Parse(this.admin_add_motorbike_price.Text), this.admin_add_motorbike_description.Text, image_link.Text);
+            if (this.admin_add_motorbike_name.Text == "" || this.admin_add_motorbike_price.Text == "" || this.admin_add_motorbike_description.Text == "")
+            {
+                MessageBox.Show("Please enter all information.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-           await Database.insert<Motorbike>(new_motorbike);
+            Motorbike new_motorbike = new Motorbike(this.admin_add_motorbike_name.Text, (int)this.admin_add_motorbike_price.Value, this.admin_add_motorbike_description.Text, image_link.Text);
+
+            await Database.insert<Motorbike>(new_motorbike);
 
             MessageBox.Show("Motorbike added", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            
             this.admin_add_motorbike_name.Text = "";
             this.admin_add_motorbike_price.Text = "";
             this.admin_add_motorbike_description.Text = "";
