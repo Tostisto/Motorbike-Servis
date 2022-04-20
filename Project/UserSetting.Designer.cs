@@ -56,21 +56,21 @@
             this.newEmail.Location = new System.Drawing.Point(130, 42);
             this.newEmail.Name = "newEmail";
             this.newEmail.Size = new System.Drawing.Size(176, 27);
-            this.newEmail.TabIndex = 2;
+            this.newEmail.TabIndex = 4;
             // 
             // newPassword
             // 
             this.newPassword.Location = new System.Drawing.Point(130, 74);
             this.newPassword.Name = "newPassword";
             this.newPassword.Size = new System.Drawing.Size(176, 27);
-            this.newPassword.TabIndex = 3;
+            this.newPassword.TabIndex = 2;
             // 
             // update_email
             // 
             this.update_email.Location = new System.Drawing.Point(312, 40);
             this.update_email.Name = "update_email";
             this.update_email.Size = new System.Drawing.Size(94, 29);
-            this.update_email.TabIndex = 4;
+            this.update_email.TabIndex = 5;
             this.update_email.Text = "Update Email";
             this.update_email.UseVisualStyleBackColor = true;
             this.update_email.Click += new System.EventHandler(this.update_email_Click);
@@ -80,7 +80,7 @@
             this.oldPassword.Location = new System.Drawing.Point(130, 41);
             this.oldPassword.Name = "oldPassword";
             this.oldPassword.Size = new System.Drawing.Size(176, 27);
-            this.oldPassword.TabIndex = 5;
+            this.oldPassword.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -102,7 +102,7 @@
             this.update_password.Location = new System.Drawing.Point(312, 74);
             this.update_password.Name = "update_password";
             this.update_password.Size = new System.Drawing.Size(94, 29);
-            this.update_password.TabIndex = 8;
+            this.update_password.TabIndex = 3;
             this.update_password.Text = "Update";
             this.update_password.UseVisualStyleBackColor = true;
             this.update_password.Click += new System.EventHandler(this.update_password_Click);

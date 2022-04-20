@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(New_motorbike));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.admin_add_motorbike_price = new System.Windows.Forms.NumericUpDown();
             this.add_motorbike_BTN = new System.Windows.Forms.Button();
             this.test_link_button = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,12 +45,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.new_motorbike_image = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.admin_add_motorbike_price = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.admin_add_motorbike_price)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.new_motorbike_image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.admin_add_motorbike_price)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -88,6 +88,18 @@
             this.panel1.Size = new System.Drawing.Size(392, 444);
             this.panel1.TabIndex = 0;
             // 
+            // admin_add_motorbike_price
+            // 
+            this.admin_add_motorbike_price.Location = new System.Drawing.Point(135, 72);
+            this.admin_add_motorbike_price.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.admin_add_motorbike_price.Name = "admin_add_motorbike_price";
+            this.admin_add_motorbike_price.Size = new System.Drawing.Size(180, 27);
+            this.admin_add_motorbike_price.TabIndex = 14;
+            // 
             // add_motorbike_BTN
             // 
             this.add_motorbike_BTN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -95,7 +107,7 @@
             this.add_motorbike_BTN.Location = new System.Drawing.Point(246, 390);
             this.add_motorbike_BTN.Name = "add_motorbike_BTN";
             this.add_motorbike_BTN.Size = new System.Drawing.Size(94, 29);
-            this.add_motorbike_BTN.TabIndex = 21;
+            this.add_motorbike_BTN.TabIndex = 18;
             this.add_motorbike_BTN.Text = "Add Motorbike";
             this.add_motorbike_BTN.UseVisualStyleBackColor = false;
             this.add_motorbike_BTN.Click += new System.EventHandler(this.add_motorbike_BTN_Click);
@@ -107,7 +119,7 @@
             this.test_link_button.Location = new System.Drawing.Point(246, 355);
             this.test_link_button.Name = "test_link_button";
             this.test_link_button.Size = new System.Drawing.Size(94, 29);
-            this.test_link_button.TabIndex = 20;
+            this.test_link_button.TabIndex = 17;
             this.test_link_button.Text = "Test Link";
             this.test_link_button.UseVisualStyleBackColor = false;
             this.test_link_button.Click += new System.EventHandler(this.test_link_button_Click);
@@ -131,7 +143,7 @@
             this.image_link.Location = new System.Drawing.Point(135, 322);
             this.image_link.Name = "image_link";
             this.image_link.Size = new System.Drawing.Size(205, 27);
-            this.image_link.TabIndex = 18;
+            this.image_link.TabIndex = 16;
             // 
             // admin_add_motorbike_description
             // 
@@ -143,7 +155,7 @@
             this.admin_add_motorbike_description.Multiline = true;
             this.admin_add_motorbike_description.Name = "admin_add_motorbike_description";
             this.admin_add_motorbike_description.Size = new System.Drawing.Size(205, 192);
-            this.admin_add_motorbike_description.TabIndex = 17;
+            this.admin_add_motorbike_description.TabIndex = 15;
             // 
             // label4
             // 
@@ -210,13 +222,6 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
-            // admin_add_motorbike_price
-            // 
-            this.admin_add_motorbike_price.Location = new System.Drawing.Point(135, 72);
-            this.admin_add_motorbike_price.Name = "admin_add_motorbike_price";
-            this.admin_add_motorbike_price.Size = new System.Drawing.Size(180, 27);
-            this.admin_add_motorbike_price.TabIndex = 22;
-            // 
             // New_motorbike
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -228,9 +233,9 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.admin_add_motorbike_price)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.new_motorbike_image)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.admin_add_motorbike_price)).EndInit();
             this.ResumeLayout(false);
 
         }

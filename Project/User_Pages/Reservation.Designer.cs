@@ -93,7 +93,7 @@
             this.button1.Location = new System.Drawing.Point(285, 306);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 8;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Book";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -111,7 +111,7 @@
             // 
             this.calendar.Location = new System.Drawing.Point(187, 87);
             this.calendar.Name = "calendar";
-            this.calendar.TabIndex = 4;
+            this.calendar.TabIndex = 2;
             this.calendar.TitleForeColor = System.Drawing.SystemColors.ActiveBorder;
             // 
             // motorbikeBrand
@@ -182,7 +182,8 @@
             this.motorbike_description.ReadOnly = true;
             this.motorbike_description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.motorbike_description.Size = new System.Drawing.Size(465, 333);
-            this.motorbike_description.TabIndex = 2;
+            this.motorbike_description.TabIndex = 5;
+            this.motorbike_description.TabStop = false;
             // 
             // panel3
             // 

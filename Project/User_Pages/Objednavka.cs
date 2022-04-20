@@ -142,6 +142,11 @@ namespace Project.User_Pages
             }
         }
 
+        public async void SendEmail()
+        {
+            await Email.OrderEmail(user, totalPrice);
+        }
+
         private async void invoiceBTN_Click(object sender, EventArgs e)
         {
             SaveFileDialog save = new SaveFileDialog();
@@ -156,6 +161,9 @@ namespace Project.User_Pages
             Thread thread2 = new Thread(UpdateOrders);
             thread2.Start();
 
+            Thread emailThread = new Thread(SendEmail);
+            emailThread.Start();
+
             this.total_price.Text = "All orders are paid";
 
             thread.Join();
@@ -164,7 +172,6 @@ namespace Project.User_Pages
 
             MessageBox.Show("Thanks for your order!");
 
-            await Email.OrderEmail(user, totalPrice);
         }
     }
 }

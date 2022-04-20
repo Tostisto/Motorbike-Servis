@@ -94,7 +94,7 @@
             this.registerDateTimePicker.Location = new System.Drawing.Point(329, 212);
             this.registerDateTimePicker.Name = "registerDateTimePicker";
             this.registerDateTimePicker.Size = new System.Drawing.Size(198, 27);
-            this.registerDateTimePicker.TabIndex = 4;
+            this.registerDateTimePicker.TabIndex = 5;
             // 
             // registerDate
             // 
@@ -137,7 +137,7 @@
             this.registerFNameEntry.Location = new System.Drawing.Point(329, 80);
             this.registerFNameEntry.Name = "registerFNameEntry";
             this.registerFNameEntry.Size = new System.Drawing.Size(198, 27);
-            this.registerFNameEntry.TabIndex = 8;
+            this.registerFNameEntry.TabIndex = 1;
             // 
             // registerLNameEntry
             // 
@@ -145,7 +145,7 @@
             this.registerLNameEntry.Location = new System.Drawing.Point(329, 113);
             this.registerLNameEntry.Name = "registerLNameEntry";
             this.registerLNameEntry.Size = new System.Drawing.Size(198, 27);
-            this.registerLNameEntry.TabIndex = 9;
+            this.registerLNameEntry.TabIndex = 2;
             // 
             // registerEmailEntry
             // 
@@ -153,7 +153,7 @@
             this.registerEmailEntry.Location = new System.Drawing.Point(329, 146);
             this.registerEmailEntry.Name = "registerEmailEntry";
             this.registerEmailEntry.Size = new System.Drawing.Size(198, 27);
-            this.registerEmailEntry.TabIndex = 10;
+            this.registerEmailEntry.TabIndex = 3;
             this.registerEmailEntry.Validating += new System.ComponentModel.CancelEventHandler(this.registerEmailEntry_Validating);
             // 
             // registerPasswordEntry
@@ -162,7 +162,7 @@
             this.registerPasswordEntry.Location = new System.Drawing.Point(329, 179);
             this.registerPasswordEntry.Name = "registerPasswordEntry";
             this.registerPasswordEntry.Size = new System.Drawing.Size(198, 27);
-            this.registerPasswordEntry.TabIndex = 11;
+            this.registerPasswordEntry.TabIndex = 4;
             this.registerPasswordEntry.Validating += new System.ComponentModel.CancelEventHandler(this.registerPasswordEntry_Validating);
             // 
             // errorProvider

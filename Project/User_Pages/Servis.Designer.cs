@@ -76,7 +76,7 @@
             this.brand_textBox.Location = new System.Drawing.Point(198, 22);
             this.brand_textBox.Name = "brand_textBox";
             this.brand_textBox.Size = new System.Drawing.Size(191, 27);
-            this.brand_textBox.TabIndex = 2;
+            this.brand_textBox.TabIndex = 1;
             this.brand_textBox.Validating += new System.ComponentModel.CancelEventHandler(this.brand_textBox_Validating);
             // 
             // model_textBox
@@ -86,7 +86,7 @@
             this.model_textBox.Location = new System.Drawing.Point(198, 59);
             this.model_textBox.Name = "model_textBox";
             this.model_textBox.Size = new System.Drawing.Size(191, 27);
-            this.model_textBox.TabIndex = 3;
+            this.model_textBox.TabIndex = 2;
             this.model_textBox.Validating += new System.ComponentModel.CancelEventHandler(this.model_textBox_Validating);
             // 
             // message_textBox
@@ -98,7 +98,7 @@
             this.message_textBox.Multiline = true;
             this.message_textBox.Name = "message_textBox";
             this.message_textBox.Size = new System.Drawing.Size(547, 167);
-            this.message_textBox.TabIndex = 4;
+            this.message_textBox.TabIndex = 6;
             this.message_textBox.Validating += new System.ComponentModel.CancelEventHandler(this.message_textBox_Validating);
             // 
             // label3
@@ -136,7 +136,7 @@
             this.place.Location = new System.Drawing.Point(198, 146);
             this.place.Name = "place";
             this.place.Size = new System.Drawing.Size(191, 28);
-            this.place.TabIndex = 7;
+            this.place.TabIndex = 5;
             // 
             // label5
             // 
@@ -162,7 +162,7 @@
             0});
             this.year_input.Name = "year_input";
             this.year_input.Size = new System.Drawing.Size(56, 27);
-            this.year_input.TabIndex = 10;
+            this.year_input.TabIndex = 3;
             this.year_input.Value = new decimal(new int[] {
             1900,
             0,
@@ -185,7 +185,7 @@
             this.spz_textbox.Location = new System.Drawing.Point(298, 104);
             this.spz_textbox.Name = "spz_textbox";
             this.spz_textbox.Size = new System.Drawing.Size(89, 27);
-            this.spz_textbox.TabIndex = 12;
+            this.spz_textbox.TabIndex = 4;
             this.spz_textbox.Validating += new System.ComponentModel.CancelEventHandler(this.spz_textbox_Validating);
             // 
             // add_servis
@@ -194,7 +194,7 @@
             this.add_servis.Location = new System.Drawing.Point(198, 388);
             this.add_servis.Name = "add_servis";
             this.add_servis.Size = new System.Drawing.Size(119, 29);
-            this.add_servis.TabIndex = 13;
+            this.add_servis.TabIndex = 7;
             this.add_servis.Text = "Add request";
             this.add_servis.UseVisualStyleBackColor = true;
             this.add_servis.Click += new System.EventHandler(this.add_servis_Click);

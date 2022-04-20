@@ -61,7 +61,7 @@
             this.loginBTN.Location = new System.Drawing.Point(419, 224);
             this.loginBTN.Name = "loginBTN";
             this.loginBTN.Size = new System.Drawing.Size(94, 29);
-            this.loginBTN.TabIndex = 11;
+            this.loginBTN.TabIndex = 3;
             this.loginBTN.Text = "Login";
             this.loginBTN.UseVisualStyleBackColor = true;
             this.loginBTN.Click += new System.EventHandler(this.loginBTN_Click);
@@ -72,7 +72,7 @@
             this.registerBTN.Location = new System.Drawing.Point(314, 224);
             this.registerBTN.Name = "registerBTN";
             this.registerBTN.Size = new System.Drawing.Size(94, 29);
-            this.registerBTN.TabIndex = 10;
+            this.registerBTN.TabIndex = 4;
             this.registerBTN.Text = "Register";
             this.registerBTN.UseVisualStyleBackColor = true;
             this.registerBTN.Click += new System.EventHandler(this.registerBTN_Click);
@@ -83,7 +83,7 @@
             this.loginPasswordEntry.Location = new System.Drawing.Point(314, 191);
             this.loginPasswordEntry.Name = "loginPasswordEntry";
             this.loginPasswordEntry.Size = new System.Drawing.Size(199, 27);
-            this.loginPasswordEntry.TabIndex = 9;
+            this.loginPasswordEntry.TabIndex = 2;
             // 
             // loginEmailEntry
             // 
@@ -91,7 +91,7 @@
             this.loginEmailEntry.Location = new System.Drawing.Point(314, 158);
             this.loginEmailEntry.Name = "loginEmailEntry";
             this.loginEmailEntry.Size = new System.Drawing.Size(199, 27);
-            this.loginEmailEntry.TabIndex = 8;
+            this.loginEmailEntry.TabIndex = 1;
             // 
             // loginPasswordLabel
             // 
