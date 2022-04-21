@@ -83,6 +83,14 @@ namespace Project.User_Pages
             float price = getTotalPrice(days, selectedMotorbike.Price);
 
 
+            DateTime now = DateTime.Now;
+
+            if (calendar.SelectionStart < now || calendar.SelectionEnd < now)
+            {
+                MessageBox.Show("You can't select a date in the past!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (calendar.SelectionStart.Date.CompareTo(calendar.SelectionEnd.Date) == 0)
             {
                 if (dates.Contains(calendar.SelectionStart.Date))
