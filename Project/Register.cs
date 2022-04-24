@@ -59,7 +59,7 @@ namespace Project
             {
                 e.Cancel = true;
                 this.registerEmailEntry.Focus();
-                this.errorProvider.SetError(this.registerPasswordEntry, "The password is not valid. Your password must contain at least 6 characters with at least one uppercase letter, number and special character.");
+                this.errorProvider.SetError(this.registerPasswordEntry, "The password is not valid. Your password must contain at least 6 characters with at least one uppercase letter and number.");
             }
         }
 

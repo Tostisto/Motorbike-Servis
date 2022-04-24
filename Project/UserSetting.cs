@@ -47,7 +47,7 @@ namespace Project.User_Pages
             }
             else
             {
-                MessageBox.Show("Fuild update Password. Password. You may have entered the wrong old password or the new password is not valid. Your password must contain at least 6 characters with at least one uppercase letter, number and special character.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fuild update Password. Password. You may have entered the wrong old password or the new password is not valid. Your password must contain at least 6 characters with at least one uppercase letter and number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
